@@ -1,0 +1,70 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.school;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.school}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Bodrum rüzgar sörfü okulu</p>
+        <h1>Bodrum'da aile ortamında windsurf öğrenin</h1>
+        <p class="section-heading">
+          Akyarlar Windsurf olarak yaklaşımımız sadece ders vermek değil; çocukların, ailelerin
+          ve her yaştan öğrencinin denizde gerçekten özgüven kazanmasını sağlamak. 35 yılı aşkın
+          süredir aynı koyda rüzgar sörfünü bir yaşam kültürü olarak paylaşıyoruz.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Rezervasyon sor</a>
+          <a class="button secondary" href="/iletisim/">Konumu gör</a>
+          <a class="button ghost" href="/ruzgar-sorfu-dersi/">6 saatlik paket</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.heroImage} alt="Bodrum Akyarlar'da windsurf eğitimi" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Okul yaklaşımı"
+        title="Burası ticari bir okul değil"
+        text="Öğrenci sayısını sınırlı tutuyor, kişisel iletişime önem veriyor, acele etmiyor ve gerçekten öğretmeye odaklanıyoruz. Bizim için önemli olan öğrencinin mutlu ayrılması, denizde korkmaması ve yıllarca bu sporu yapmaya devam etmesi."
+      />
+      <div class="grid">
+        <article class="card">
+          <h3>Çocuk odaklı eğitim</h3>
+          <p>5-6 yaşından itibaren küçük ekipmanlar, hafif yelkenler ve oyunlaştırılmış anlatımla çocukların denizi sevmesini hedefliyoruz.</p>
+        </article>
+        <article class="card">
+          <h3>Tatilinize göre plan</h3>
+          <p>Dersleri hava durumuna, rüzgara, öğrencinin enerjisine ve tatil programına göre esnek şekilde planlıyoruz.</p>
+        </article>
+        <article class="card">
+          <h3>Aile güveni</h3>
+          <p>Aileler sahilde vakit geçirebilir, çocuklarının sürecini izleyebilir; isteyen aile üyeleri eğitim teknesine katılabilir.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Aileler için</p>
+        <h2>Çocuğunuz dersteyken sahilde rahatça vakit geçirebilirsiniz</h2>
+        <p>
+          Akyarlar sahili restoranlar, kafeler ve oturma alanlarıyla ailelerin beklemesi için
+          rahattır. Koyun fiziksel avantajlarını okumak için <a href="/akyarlar-koyu-rehberi/">Akyarlar Koyu Rehberi</a>
+          sayfasına, sabah sakin deniz deneyimi için <a href="/bodrum-paddle/">Bodrum Paddle</a>
+          sayfasına geçebilirsiniz.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

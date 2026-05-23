@@ -1,0 +1,104 @@
+---
+import { site } from "@data/site";
+
+const currentPath = Astro.url.pathname;
+
+const isCurrent = (href: string) => currentPath === href;
+---
+
+<header class="site-header" data-site-header>
+  <div class="header-strip">
+    <a href={site.mapUrl}>{site.shortAddress}</a>
+    <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
+  </div>
+  <div class="header-main">
+    <a class="brand" href="/" aria-label="Akyarlar Windsurf ana sayfa">
+      <span class="brand-mark">AW</span>
+      <span>
+        <strong>Akyarlar Windsurf</strong>
+        <small>Bodrum Rüzgar Sörfü Okulu</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Menüyü aç</span>
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="Ana menü" data-primary-nav>
+      <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Ana Sayfa</a>
+      <div class="nav-item has-menu">
+        <button class="nav-trigger" type="button" aria-expanded="false">
+          Hizmetler
+          <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="nav-menu">
+          <a href="/bodrum-ruzgar-sorfu-okulu/" aria-current={isCurrent("/bodrum-ruzgar-sorfu-okulu/") ? "page" : undefined}>
+            Bodrum Windsurf Okulu
+          </a>
+          <a href="/ruzgar-sorfu-dersi/" aria-current={isCurrent("/ruzgar-sorfu-dersi/") ? "page" : undefined}>
+            Rüzgar Sörfü Dersi
+          </a>
+          <a href="/kiralama/" aria-current={isCurrent("/kiralama/") ? "page" : undefined}>
+            Ekipman Kiralama
+          </a>
+        </div>
+      </div>
+      <a href="/akyarlar/" aria-current={isCurrent("/akyarlar/") ? "page" : undefined}>Akyarlar</a>
+      <div class="nav-item has-menu">
+        <button class="nav-trigger" type="button" aria-expanded="false">
+          Rehber
+          <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="nav-menu">
+          <a href="/akyarlar-koyu-rehberi/" aria-current={isCurrent("/akyarlar-koyu-rehberi/") ? "page" : undefined}>
+            Akyarlar Koyu
+          </a>
+          <a href="/bodrum-paddle/" aria-current={isCurrent("/bodrum-paddle/") ? "page" : undefined}>
+            Bodrum Paddle
+          </a>
+          <a href="/bodrum-su-sporlari/" aria-current={isCurrent("/bodrum-su-sporlari/") ? "page" : undefined}>
+            Su Sporları
+          </a>
+        </div>
+      </div>
+      <a href="/#ruzgar">Rüzgar</a>
+      <a href="/iletisim/" aria-current={isCurrent("/iletisim/") ? "page" : undefined}>İletişim</a>
+    </nav>
+
+    <a class="header-cta" href={site.whatsapp}>WhatsApp</a>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const header = document.querySelector("[data-site-header]");
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const nav = document.querySelector("[data-primary-nav]");
+
+    if (!header || !toggle || !nav) return;
+
+    const setOpen = (open) => {
+      header.toggleAttribute("data-menu-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(!header.hasAttribute("data-menu-open"));
+    });
+
+    nav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setOpen(false);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!header.contains(event.target)) setOpen(false);
+    });
+  })();
+</script>

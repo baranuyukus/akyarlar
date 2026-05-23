@@ -1,0 +1,46 @@
+---
+import { site } from "@data/site";
+---
+
+<section class="section wind-section" id="ruzgar">
+  <div class="container">
+    <div class="wind-layout wind-layout-wide">
+      <div class="wind-copy">
+        <p class="eyebrow">Akyarlar rüzgar tahmini</p>
+        <h2>Rüzgara göre ders ve kiralama planı</h2>
+        <p>
+          Akyarlar'da rüzgar sörfü dersi ve ekipman kiralama için rüzgar yönü, hız, gust ve
+          sıcaklık değerlerini kontrol ederek gelmeden önce uygun saatleri sorabilirsiniz.
+        </p>
+      </div>
+      <div class="wind-summary" aria-label="Rüzgar tahmini kullanım notları">
+        <div>
+          <strong>Sabah</strong>
+          <span>Paddle ve sakin deniz</span>
+        </div>
+        <div>
+          <strong>Öğleden sonra</strong>
+          <span>Windsurf ve meltem</span>
+        </div>
+        <a class="button whatsapp" href={site.whatsapp}>Bugün için sor</a>
+      </div>
+      <div class="wind-widget" aria-label="Windguru Akyarlar rüzgar tahmini tablosu">
+        <script is:inline id="wg_fwdg_49278_100_1779564581304">
+          (function (window, document) {
+            var loader = function () {
+              var arg = ["s=49278" ,"m=100","uid=wg_fwdg_49278_100_1779564581304" ,"wj=knots" ,"tj=c" ,"waj=m" ,"tij=cm" ,"odh=0" ,"doh=24" ,"fhours=240" ,"hrsm=1" ,"vt=forecasts" ,"lng=en" ,"idbs=1" ,"p=WINDSPD,GUST,SMER,TMPE,FLHGT,CDC,APCP1s,RATING"];
+              var script = document.createElement("script");
+              var tag = document.getElementsByTagName("script")[0];
+              script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
+              tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+          })(window, document);
+        </script>
+        <noscript>
+          <a href="https://www.windguru.cz/49278">Akyarlar rüzgar tahminini Windguru'da görüntüleyin.</a>
+        </noscript>
+      </div>
+    </div>
+  </div>
+</section>

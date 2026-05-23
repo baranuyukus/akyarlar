@@ -1,0 +1,256 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import WindguruWidget from "@components/WindguruWidget.astro";
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.home;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.home}>
+  <section class="hero" style={`--hero-image: url('${site.heroImage}')`}>
+    <div class="hero-inner">
+      <p class="eyebrow">Bodrum Akyarlar rüzgar sörfü okulu</p>
+      <h1>Akyarlar Windsurf</h1>
+      <p class="lead">
+        Bodrum'da rüzgar sörfü öğrenmek için en güvenli ve keyifli koylardan biri olan
+        Akyarlar'da, 35 yılı aşkın süredir denizin içinde yaşayan bir aileyle gerçekten
+        windsurf öğrenin.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href={site.whatsapp}>Ders için WhatsApp</a>
+        <a class="button secondary" href="/ruzgar-sorfu-dersi/">Dersleri incele</a>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Akyarlar Windsurf öne çıkan bilgiler">
+      <div>
+        <strong>35+ yıl</strong>
+        <span>Aynı koyda aktif aile deneyimi</span>
+      </div>
+      <div>
+        <strong>Akyarlar</strong>
+        <span>Sığ, temiz ve dalgasız koy</span>
+      </div>
+      <div>
+        <strong>6 ders</strong>
+        <span>Bağımsız kullanım hedefli özel paket</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Neden Akyarlar Windsurf?"
+        title="Bodrum'da rüzgar sörfü öğrenmek için en güvenli ve keyifli koy"
+        text="Akyarlar yalnızca güzel bir tatil koyu değil; Türkiye'de rüzgar sörfü öğrenmek için en uygun doğal eğitim alanlarından biridir. Bizim yaklaşımımız sadece ders vermek değil; çocukların, ailelerin ve her yaştan öğrencinin denizde gerçekten özgüven kazanmasını sağlamak."
+      />
+      <div class="grid">
+        <article class="card">
+          <h3>Yaşam kültürü</h3>
+          <p>35 yılı aşkın süredir aynı koyda yaşayan ve aktif olarak denizin içinde olan bir aile olarak rüzgar sörfünü ticari bir aktivite değil, paylaşılması gereken bir yaşam kültürü olarak görüyoruz.</p>
+        </article>
+        <article class="card">
+          <h3>Gerçek öğretim</h3>
+          <p>Öğrenciyi gereksiz teoride tutmadan; denge, yön kontrolü, yelken hakimiyeti ve dönüş mantığını doğrudan pratik içinde öğretiyoruz.</p>
+          <a href="/ruzgar-sorfu-dersi/">6 saatlik özel ders</a>
+        </article>
+        <article class="card">
+          <h3>Aile güveni</h3>
+          <p>Çocukların, ailelerin ve korkusu olan öğrencilerin denizde kendini rahat hissetmesi bizim için hızdan ve yoğunluktan daha önemlidir.</p>
+          <a href="/bodrum-ruzgar-sorfu-okulu/">Okul yaklaşımı</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Akyarlar koyu</p>
+        <h2>Dalgalara kapalı doğal koy yapısı</h2>
+        <p>
+          Akyarlar fiziksel yapısı sayesinde Bodrum'daki birçok koya göre çok daha güvenli
+          bir deniz sunar. Açık deniz dalgalarını büyük ölçüde keser, kontrollü rüzgar alır
+          ve geniş sığ alanlarıyla ilk kez deneyecek öğrenciler için güçlü bir başlangıç alanı oluşturur.
+        </p>
+        <ul class="check-list">
+          <li>Çocuklar ve aileler için korkmadan denizde kalabilecek güvenli bir koy yapısı.</li>
+          <li>İlk kez rüzgar sörfü yapacak kişiler için kontrollü rüzgar ve dalgasız su.</li>
+          <li>Korkusu olan öğrenciler için panik yaratmayan, tekrar yapmaya uygun eğitim alanı.</li>
+          <li>İleri seviyede pratik yapmak isteyenler için düzenli termik rüzgar avantajı.</li>
+        </ul>
+        <div class="actions">
+          <a class="button ghost" href="/akyarlar-koyu-rehberi/">Akyarlar koyu rehberi</a>
+          <a class="button ghost" href="/bodrum-su-sporlari/">Su sporları rehberi</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.familyImage} alt="Akyarlar koyunda aile tatili ve berrak deniz" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">İlk ders</p>
+        <h2>İlk derste gerçekten gidip dönebiliyorsunuz</h2>
+        <p>
+          Eğitim sistemimizin en önemli farkı öğrenciyi gereksiz teoride tutmamak. İlk dersten
+          itibaren denge, yön kontrolü, yelken hakimiyeti ve dönüş mantığı doğrudan pratik
+          içinde çalışılır.
+        </p>
+        <ul class="check-list">
+          <li>Doğru ekipman seçimiyle öğrencilerin büyük çoğunluğu ilk ders sonunda kontrollü ilerleyebilir.</li>
+          <li>Geri dönebilme ve temel dönüşler ilk günden özgüven kazandırır.</li>
+          <li>Ezber anlatım yerine denizde hissederek, deneyerek ve tekrar ederek öğrenilir.</li>
+          <li>Akyarlar'ın uygun koy yapısı ilk deneyimde korkmadan denizde kalmayı kolaylaştırır.</li>
+        </ul>
+        <div class="actions">
+          <a class="button ghost" href="/ruzgar-sorfu-dersi/">Ders sistemini incele</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.heroImage} alt="Akyarlar koyunda berrak deniz ve sakin sahil" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section band soft-band">
+    <div class="container">
+      <SectionHeading
+        eyebrow="6 saatlik özel ders paketimiz"
+        title="Her yerde windsurf yapabilecek seviyeye gelirsiniz"
+        text="Özel eğitim paketimiz toplam 6 ders saatinden oluşur. Bu süreçte yalnızca board üzerinde durmayı değil; gerçek rüzgar okumayı, yön değiştirmeyi, serbest sürüş yapmayı ve farklı rüzgar açılarını kullanmayı öğrenirsiniz."
+      />
+      <div class="process">
+        <article>
+          <h3>Temel kontrol</h3>
+          <p>İlk derslerde board üzerinde denge, yelken hakimiyeti, yön kontrolü ve güvenli dönüş çalışılır.</p>
+        </article>
+        <article>
+          <h3>3 saat sonra tekne</h3>
+          <p>Temel eğitim tamamlandıktan sonra tekne destekli açık alan çalışmalarına geçilir.</p>
+        </article>
+        <article>
+          <h3>İpsiz serbest sürüş</h3>
+          <p>Öğrenci kıyıya bağlı kalmadan daha uzun rotalar dener ve gerçek sürüş hissini kazanır.</p>
+        </article>
+        <article>
+          <h3>Bağımsız temel</h3>
+          <p>6 saatin sonunda kendi başına gidip dönebilen, güvenli sürüş yapabilen bir seviye hedeflenir.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Çocuklar için rüzgar sörfü eğitimi</h2>
+        <p>
+          Akyarlar'ın sığ ve güvenli denizi sayesinde çocuklar çok daha rahat öğrenir. 5-6
+          yaşından itibaren uygun hava koşullarında küçük ekipmanlar, hafif yelkenler ve
+          oyunlaştırılmış anlatım kullanıyoruz. Amacımız çocukları zorlamak değil; denizi seven,
+          özgüvenli bireyler haline getirmek.
+        </p>
+        <ul class="check-list">
+          <li>Çocuğun yaşına, yüzme bilgisine ve dikkat süresine göre ders planı yapılır.</li>
+          <li>Birçok çocuk birkaç ders içinde kendi board'una çıkıp temel yön kontrolü yapabilir.</li>
+          <li>Tekne derslerinde isteyen aile üyeleri çocuklarını veya yakınlarını izleyebilir.</li>
+        </ul>
+        <div class="actions">
+          <a class="button ghost" href="/bodrum-ruzgar-sorfu-okulu/">Çocuk ve aile dersleri</a>
+        </div>
+      </article>
+
+      <article class="article-section">
+        <h2>Aile ortamı ve güven hissi</h2>
+        <p>
+          Burası hızlı ders sistemiyle çalışan ticari bir okul gibi tasarlanmadı. Öğrenci sayısını
+          sınırlı tutuyor, kişisel iletişime önem veriyor, acele etmiyor ve gerçekten öğretmeye
+          odaklanıyoruz. Bizim için önemli olan öğrencinin mutlu ayrılması, denizde korkmaması ve
+          yıllarca bu sporu yapmaya devam etmesi.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Tatiline göre planlanan eğitim sistemi</h2>
+        <p>
+          Herkesin tatil düzeni farklıdır. Kimi sabah erken saatleri sever, kimi öğleden sonra
+          daha rahat hisseder; çocuklu aileler ise bambaşka bir plan ister. Bu yüzden dersleri
+          hava durumuna, rüzgara, öğrencinin enerjisine ve tatil programına göre esnek şekilde
+          planlıyoruz.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Bodrum'un en temiz ve güvenli denizlerinden biri</h2>
+        <p>
+          Akyarlar sahili temiz, geniş, yürünebilir ve aile dostu bir yapıya sahiptir. Sahil
+          boyunca restoranlar, kafeler, marketler, oturma alanları ve çocukların vakit
+          geçirebileceği alanlar bulunur. Aileler çocuklarını izlerken gün boyunca rahat vakit
+          geçirebilir.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Minimalist ve gerçek bir surf kültürü</h2>
+        <p>
+          Bizim için önemli olan yüksek sesli beach club kültürü değil, gerçek deniz deneyimi.
+          Akyarlar'ın ruhu sakinlik, doğallık, spor ve deniz sevgisi üzerine kurulu. Burada
+          insanlar birbirine yardım eder, birlikte öğrenir ve denizin keyfini paylaşır.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>İleri seviye için de çok uygun</h2>
+        <p>
+          Akyarlar yalnızca başlangıç seviyesine uygun değildir. Düzenli termik rüzgar sayesinde
+          harness kullanımı, footstrap çalışmaları, carving, hız kontrolü ve ileri seviye dönüşler
+          için de güçlü koşullar sunar.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Neden insanlar tekrar tekrar buraya geliyor?</h2>
+        <p>
+          Çünkü burada insanlar sadece ders almıyor; özgüven kazanıyor, denizi seviyor, aile
+          ortamı hissediyor ve gerçek bir Ege deneyimi yaşıyor. Birçok öğrencimiz yıllar sonra
+          bile gelip "İlk kez burada korkmadan denize çıkmıştım." diyor. Bu bizim için en büyük değer.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <WindguruWidget />
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Sık sorulanlar" title="Rüzgar sörfü dersinden önce" />
+      <div class="faq-grid">
+        {faqSets.home.map((faq) => (
+          <article class="faq">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Sonuç</p>
+        <h2>Akyarlar sadece rüzgar sörfü yapılan bir koy değil</h2>
+        <p>
+          Burası çocukların özgüven kazandığı, ailelerin güven hissettiği, insanların denizi
+          gerçekten öğrendiği ve samimi bir surf kültürünün yaşadığı özel bir yer. Biz 35 yıldır
+          bu kültürü paylaşmaya devam ediyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

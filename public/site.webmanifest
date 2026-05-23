@@ -1,0 +1,9 @@
+{
+  "name": "Akyarlar Windsurf",
+  "short_name": "Akyarlar Windsurf",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f2",
+  "theme_color": "#063d52",
+  "lang": "tr"
+}

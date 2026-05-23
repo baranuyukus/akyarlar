@@ -1,0 +1,75 @@
+---
+import { faqs, site } from "@data/site";
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+type Props = {
+  pageTitle: string;
+  pageDescription: string;
+  pageUrl: string;
+  includeFaq?: boolean;
+  faqItems?: FaqItem[];
+};
+
+const { pageTitle, pageDescription, pageUrl, includeFaq = false, faqItems = faqs } = Astro.props;
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": ["SportsActivityLocation", "LocalBusiness"],
+  name: site.name,
+  legalName: site.legalName,
+  url: site.domain,
+  image: site.socialImage,
+  telephone: site.phoneE164,
+  email: site.email,
+  priceRange: "$$",
+  description: site.description,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Barış Manço Caddesi, Akyarlar Otel Sokağı",
+    addressLocality: "Bodrum",
+    addressRegion: "Muğla",
+    postalCode: "48960",
+    addressCountry: "TR"
+  },
+  areaServed: ["Akyarlar", "Turgutreis", "Bodrum", "Muğla"],
+  sameAs: [site.mapUrl]
+};
+
+const webPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: pageTitle,
+  description: pageDescription,
+  url: pageUrl,
+  isPartOf: {
+    "@type": "WebSite",
+    name: site.name,
+    url: site.domain
+  },
+  about: {
+    "@type": "Thing",
+    name: "Rüzgar sörfü eğitimi"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer
+    }
+  }))
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(webPage)} />
+{includeFaq && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

@@ -1,0 +1,151 @@
+---
+import { faqSets, guideLinks, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.akyarlar;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.akyarlar}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Akyarlar spot rehberi</p>
+        <h1>Bodrum Akyarlar koyu rüzgar sörfü için neden seviliyor?</h1>
+        <p>
+          Akyarlar, dalgalara kapalı koy yapısı, temiz denizi ve düzenli rüzgarıyla hem ilk
+          kez rüzgar sörfü öğrenecek çocuklar ve aileler hem de ileri seviye sporcular için
+          Bodrum'un en değerli noktalarından biridir.
+        </p>
+        <p>
+          Koyun detaylı tatil ve deniz rehberi için <a href="/akyarlar-koyu-rehberi/">Akyarlar Koyu Rehberi</a>,
+          eğitim sistemi için <a href="/ruzgar-sorfu-dersi/">Bodrum rüzgar sörfü dersi</a>
+          sayfasını inceleyebilirsiniz.
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Dalgalara kapalı koy</h3>
+          <p>Kapalı koy yapısı suyu daha kontrollü hale getirir; ilk derslerde panik azalır, tekrar sayısı artar.</p>
+        </article>
+        <article class="card">
+          <h3>Çok temiz deniz</h3>
+          <p>Berrak ve serin su, ailelerin gün içinde denize girmesi ve çocukların sahilde vakit geçirmesi için büyük avantajdır.</p>
+        </article>
+        <article class="card">
+          <h3>Sahil yaşamı</h3>
+          <p>Sahil üzerindeki işletmeler, yemek yerleri ve bekleme alanları ailelerin ders boyunca rahat etmesini sağlar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Akyarlar: öğretim için güven veren doğal alan</h2>
+        <p>
+          Bodrum'un güneybatısında yer alan Akyarlar, yalnızca güzel bir tatil koyu değildir.
+          Koyun fiziksel yapısı dalgayı keser, deniz temiz kalır ve rüzgar gün içinde düzenli
+          çalışır. Bu yüzden bir çocuğun ilk kez yelkeni eline almasıyla ileri seviyede pratik
+          yapmak isteyen bir sporcunun ihtiyacı aynı sahilde karşılanabilir.
+        </p>
+        <ul class="check-list">
+          <li>Dalgalara kapalı yapı öğretim sırasında öğrenciyi yormaz.</li>
+          <li>Çok temiz deniz çocuklar ve aileler için gün boyu rahat bir ortam sağlar.</li>
+          <li>Düzenli rüzgar, ilk ders ve ileri seviye çalışma arasında doğal geçiş yaratır.</li>
+          <li>Sahil üzerindeki işletmeler ailelerin bekleme ve yemek ihtiyacını kolaylaştırır.</li>
+          <li>Sabah sakin su, öğleden sonra rüzgar sporu için güçlü günlük ritim sunar.</li>
+        </ul>
+      </article>
+
+      <article class="article-section">
+        <h2>Neden rüzgar sörfü için bu kadar uygun?</h2>
+        <p>
+          Akyarlar'ın en büyük avantajı, yaz aylarında gün içinde düzenli esen meltemin
+          eğitim ve performans arasında iyi bir denge kurmasıdır. Sabah saatleri paddle ve
+          yüzme için sakinleşirken, öğleden sonra windsurf ve wing foil için daha istekli
+          rüzgar oluşur.
+        </p>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Özellik</th>
+              <th>Avantaj</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Düzenli rüzgar</td>
+              <td>Rüzgar sörfü eğitimi ve tekrar için ideal tempo sağlar.</td>
+            </tr>
+            <tr>
+              <td>Kontrollü dalga</td>
+              <td>Başlangıç seviyesindeki öğrenciler için daha anlaşılır su yüzeyi sunar.</td>
+            </tr>
+            <tr>
+              <td>Geniş koy</td>
+              <td>Güvenli sürüş alanı ve dönüş noktaları oluşturur.</td>
+            </tr>
+            <tr>
+              <td>Açık deniz bağlantısı</td>
+              <td>İlerleyen seviyeler için performans ve rota çeşitliliği verir.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="article-section">
+        <h2>Gerçek kullanıcı yorumlarında öne çıkanlar</h2>
+        <p>
+          Akyarlar hakkında yapılan yorumlarda en çok tekrar eden ifadeler berrak, huzurlu,
+          rüzgarlı, sakin, temiz, turkuaz ve serin deniz etrafında toplanır. Bu algı,
+          lokasyonun hem tatil hem de spor araması yapan kullanıcılar için güçlü bir tercih
+          nedeni olduğunu gösterir.
+        </p>
+        <div class="quote-grid">
+          <blockquote>"Türkiye'de girdiğim en güzel denizlerden biri."</blockquote>
+          <blockquote>"Akyarlar çok huzurludur, denizi inanılmazdır."</blockquote>
+          <blockquote>"Rüzgarı sayesinde sörf için inanılmaz keyiflidir."</blockquote>
+          <blockquote>"Kos manzarası eşliğinde denize girmek ayrı bir deneyim."</blockquote>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="image-panel">
+        <img src={site.heroImage} alt="Akyarlar koyunda rüzgar sörfü" />
+      </div>
+      <div>
+        <p class="eyebrow">Konum ve günlük deneyim</p>
+        <h2>Turgutreis'e yakın, ailelerin gün boyu kalabileceği bir sahil</h2>
+        <p>
+          Akyarlar, Bodrum merkezden ulaşılabilir; Turgutreis'e ise oldukça yakındır. Ders
+          sırasında aileler sahilde oturabilir, yemek yiyebilir, denize girebilir ve çocuklarının
+          gelişimini takip edebilir. Bu rahatlık, özellikle çocuk derslerinde koyu çok güçlü
+          bir öğrenme alanına dönüştürür.
+        </p>
+        <a class="button" href={site.mapUrl}>Haritada aç</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Devam rehberleri</p>
+        <h2>Akyarlar hakkında daha fazla bilgi</h2>
+      </div>
+      <div class="grid">
+        {guideLinks.map((guide) => (
+          <article class="card">
+            <h3>{guide.title}</h3>
+            <p>{guide.text}</p>
+            <a href={guide.href}>Detayları oku</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

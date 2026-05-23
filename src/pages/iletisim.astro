@@ -1,0 +1,68 @@
+---
+import { pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.contact;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path}>
+  <section class="section alt">
+    <div class="container contact-panel">
+      <div>
+        <p class="eyebrow">İletişim</p>
+        <h1>Ders, kiralama ve yol tarifi</h1>
+        <p>
+          Rüzgar ve sezon yoğunluğu değişebildiği için rüzgar sörfü dersi veya ekipman kiralama
+          planlamadan önce telefon ya da WhatsApp üzerinden haber vermeniz önerilir.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href={`tel:${site.phoneE164}`}>
+          <span>Telefon</span>
+          <span>{site.phoneDisplay}</span>
+        </a>
+        <a class="contact-link" href={site.whatsapp}>
+          <span>WhatsApp</span>
+          <span>Mesaj gönder</span>
+        </a>
+        <a class="contact-link" href={`mailto:${site.email}`}>
+          <span>E-posta</span>
+          <span>{site.email}</span>
+        </a>
+        <a class="contact-link" href={site.mapUrl}>
+          <span>Adres</span>
+          <span>{site.shortAddress}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Adres</p>
+        <h2>{site.address}</h2>
+        <p>
+          Akyarlar Windsurf, Bodrum Akyarlar koyunda rüzgar sörfü dersi, çocuk eğitimi,
+          yelken eğitimi ve ekipman desteği verir.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Rezervasyon sor</a>
+          <a class="button ghost" href={site.mapUrl}>Google Maps'te aç</a>
+        </div>
+      </div>
+      <div class="map-panel" aria-label="Akyarlar Windsurf Google Harita">
+        <iframe
+          src={site.mapEmbedUrl}
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Akyarlar Windsurf Google Harita konumu"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

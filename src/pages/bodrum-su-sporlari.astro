@@ -1,0 +1,130 @@
+---
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.waterSports;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.waterSports}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Bodrum su sporları</p>
+        <h1>Windsurf, wing foil, kite surf ve paddle için Akyarlar</h1>
+        <p>
+          Akyarlar; düzenli meltem rüzgarı, dalgalara kapalı koy yapısı, berrak denizi ve aile
+          dostu sahil atmosferi sayesinde Bodrum su sporları için güçlü bir doğal merkezdir.
+          Başlangıç için <a href="/ruzgar-sorfu-dersi/">rüzgar sörfü dersi</a>, sabah sakin deniz
+          için <a href="/bodrum-paddle/">Bodrum paddle</a> sayfalarını inceleyebilirsiniz.
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Windsurf</h3>
+          <p>6 saatlik özel ders, çocuk odaklı başlangıç, rüzgar okuma ve güvenli dönüş için Akyarlar'ın kontrollü koy yapısı kullanılır.</p>
+          <a href="/ruzgar-sorfu-dersi/">Dersleri incele</a>
+        </article>
+        <article class="card">
+          <h3>Wing Foil</h3>
+          <p>Yeni nesil su sporları arasında öne çıkan wing foil için açık rüzgar koridoru, temiz deniz ve stabil koşullar önemlidir.</p>
+        </article>
+        <article class="card">
+          <h3>Paddle Board</h3>
+          <p>Sabah saatlerinde sakinleşen deniz SUP paddle ve gün doğumu rotaları için güçlü avantaj sağlar.</p>
+          <a href="/bodrum-paddle/">Paddle rehberi</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Akyarlar'da hangi su sporları yapılır?</h2>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Spor</th>
+              <th>Uygunluk</th>
+              <th>Neden uygun?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Windsurf</td>
+              <td>Mükemmel</td>
+              <td>Düzenli meltem, dalgasız koy, çocuk ve yetişkin eğitimi için güvenli alan.</td>
+            </tr>
+            <tr>
+              <td>Paddle Board</td>
+              <td>Mükemmel</td>
+              <td>Sabah saatlerinde cam gibi deniz ve sakin atmosfer.</td>
+            </tr>
+            <tr>
+              <td>Wing Foil</td>
+              <td>Çok iyi</td>
+              <td>Açık rüzgar koridoru ve gün içinde stabil hava koşulları.</td>
+            </tr>
+            <tr>
+              <td>Kite Surf</td>
+              <td>Çok iyi</td>
+              <td>Uygun rüzgar günlerinde geniş sahil ve açık deniz bağlantısı.</td>
+            </tr>
+            <tr>
+              <td>Kano</td>
+              <td>İdeal</td>
+              <td>Sakin sabah saatleri ve koy içi rota seçenekleri.</td>
+            </tr>
+            <tr>
+              <td>Serbest yüzme</td>
+              <td>Harika</td>
+              <td>Berrak, serin ve temiz deniz yapısı.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="article-section">
+        <h2>Öncelik çocuklar ve aileler</h2>
+        <p>
+          Akyarlar Windsurf için su sporları yalnızca ekipman kiralama değildir. Asıl çalışma
+          alanı çocuklar ve ailelerdir; 5-6 yaşından itibaren rüzgar sörfü öğrenmek isteyen
+          öğrenciler için güven, sabır ve doğru tekrar üzerine kurulu dersler verilir.
+        </p>
+        <ul class="check-list">
+          <li>Aile işletmesi olduğu için ders ortamı daha kişisel ve güven vericidir.</li>
+          <li>Öğrenci hazır olmadan açığa çıkarılmaz; koy içinde kontrollü tekrar yapılır.</li>
+          <li>Tekne destekli derslerde aileden biri süreci yakından izleyebilir.</li>
+        </ul>
+      </article>
+
+      <article class="article-section">
+        <h2>Profesyoneller neden Akyarlar'ı tercih ediyor?</h2>
+        <p>
+          Profesyonel sporcular için rüzgarın sürekliliği, açısı ve gün içindeki tahmin
+          edilebilirliği belirleyicidir. Akyarlar'da yaz sezonunda öğleden sonra oluşan meltem,
+          windsurf ve wing foil sürüşleri için düzenli pratik imkanı verir.
+        </p>
+        <ul class="check-list">
+          <li>Termik rüzgarın yaz sezonunda sık ve düzenli çalışması.</li>
+          <li>Açık denize bağlanan rota hissi.</li>
+          <li>Başlangıç ve ileri seviye için aynı koyda farklı alanlar.</li>
+          <li>Kalabalık beach atmosferinden uzak daha konsantre sürüş deneyimi.</li>
+        </ul>
+      </article>
+
+      <article class="article-section">
+        <h2>Wing foil ve kite surf için yeni nesil rota</h2>
+        <p>
+          Son yıllarda wing foil, kite surf ve hydrofoil sporlarının artmasıyla Akyarlar yeni
+          nesil su sporları için de daha görünür hale geldi. Güvenli launch alanı, geniş sahil,
+          açık rüzgar koridoru ve stabil hava koşulları uygun günlerde güçlü avantaj sağlar.
+        </p>
+        <div class="actions">
+          <a class="button" href="/#ruzgar">Rüzgar tahminini gör</a>
+          <a class="button ghost" href={site.whatsapp}>Bugün için uygunluk sor</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

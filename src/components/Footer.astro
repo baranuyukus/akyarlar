@@ -1,0 +1,43 @@
+---
+import { navItems, site } from "@data/site";
+---
+
+<footer class="footer">
+  <div class="footer-main">
+    <div>
+      <strong>Akyarlar Windsurf</strong>
+      <p>{site.shortAddress}</p>
+      <p>35 yılı aşkın aile deneyimiyle Bodrum Akyarlar'da rüzgar sörfü dersi, çocuk eğitimi ve ekipman desteği.</p>
+      <div class="footer-actions">
+        <a class="button whatsapp" href={site.whatsapp}>WhatsApp</a>
+        <a class="button ghost" href={site.mapUrl}>Yol tarifi</a>
+      </div>
+    </div>
+    <div class="footer-map" aria-label="Akyarlar Windsurf harita konumu">
+      <iframe
+        src={site.mapEmbedUrl}
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Akyarlar Windsurf Google Harita konumu"
+      ></iframe>
+    </div>
+  </div>
+  <div class="footer-links">
+    <strong>Sayfalar</strong>
+    <nav aria-label="Alt menü">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+  <div class="footer-contact">
+    <strong>İletişim</strong>
+    <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
+    <a href={site.whatsapp}>WhatsApp ile yaz</a>
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+    <a href={site.mapUrl}>Yol tarifi al</a>
+    <p>{site.address}</p>
+  </div>
+</footer>

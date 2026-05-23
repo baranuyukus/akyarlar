@@ -1,0 +1,97 @@
+---
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.paddle;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.paddle}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Bodrum paddle</p>
+        <h1>Akyarlar'da SUP paddle için sabahın cam gibi denizi</h1>
+        <p>
+          Bodrum paddle deneyimi için Akyarlar sabah saatlerinde sakin, berrak ve güvenli su
+          yapısıyla öne çıkar. Gün doğumu paddle, yoga paddle, çocuklar için kontrollü deneme
+          seansları ve ailece deniz üstünde vakit geçirmek için koyun doğal ritmi çok uygundur.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Paddle için sor</a>
+          <a class="button ghost" href="/akyarlar-koyu-rehberi/">Akyarlar rehberi</a>
+          <a class="button ghost" href="/ruzgar-sorfu-dersi/">Windsurf dersi</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.heroImage} alt="Bodrum Akyarlar paddle board deneyimi" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Bodrum paddle için neden Akyarlar?</h2>
+        <p>
+          Akyarlar'da sabah erken saatlerde deniz çoğu gün neredeyse dümdüz olur. Bu durum
+          SUP paddle eğitimi, yoga paddle, gün doğumu paddle turları ve çocuklar için güvenli
+          paddle deneyimi açısından önemli avantaj sağlar. Sahil üzerindeki işletmeler sayesinde
+          aileler paddle öncesi ve sonrası rahatça vakit geçirebilir.
+        </p>
+        <ul class="check-list">
+          <li>06:00 - 09:00 arasında sakin ve serin deniz.</li>
+          <li>Cam gibi su yüzeyi sayesinde kolay denge çalışması.</li>
+          <li>Kos manzarası eşliğinde sessiz rota deneyimi.</li>
+          <li>Öğleden önce kalabalık ve rüzgar baskısının daha az olması.</li>
+          <li>Çocuklar ve aileler için kontrollü, kısa ve keyifli deneme seansları.</li>
+        </ul>
+      </article>
+
+      <article class="article-section">
+        <h2>Paddle için en iyi saatler</h2>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Saat</th>
+              <th>Deniz durumu</th>
+              <th>Uygun aktivite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>06:00 - 09:00</td>
+              <td>En sakin ve berrak dönem</td>
+              <td>SUP paddle, yoga paddle, gün doğumu turu</td>
+            </tr>
+            <tr>
+              <td>09:00 - 12:00</td>
+              <td>Hâlâ kontrollü, hafif rüzgar başlayabilir</td>
+              <td>Başlangıç paddle ve aile seansı</td>
+            </tr>
+            <tr>
+              <td>Öğleden sonra</td>
+              <td>Meltem belirginleşir</td>
+              <td>Windsurf, wing foil ve rüzgar sporları</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="article-section">
+        <h2>Paddle sonrası Akyarlar deneyimi</h2>
+        <p>
+          Paddle rotasından sonra Meteor Beach çevresinde yüzmek, sahilde kahve içmek veya
+          gün batımı saatlerinde Kos manzarasını izlemek Akyarlar'ı yalnızca bir spor noktası
+          olmaktan çıkarır. Bu nedenle bodrum paddle arayan birçok kişi Akyarlar'ı sakin,
+          berrak ve doğal bir alternatif olarak görür.
+        </p>
+        <div class="quote-grid">
+          <blockquote>"Sabah denizi akvaryum kadar berrak."</blockquote>
+          <blockquote>"Akyarlar paddle için sakin ve huzurlu."</blockquote>
+          <blockquote>"Kos manzarası rotayı unutulmaz yapıyor."</blockquote>
+          <blockquote>"Bir kere gelen tekrar gelmek istiyor."</blockquote>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

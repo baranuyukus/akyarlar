@@ -1,0 +1,53 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.rental;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.rental}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Windsurf kiralama</p>
+        <h1>Bodrum Akyarlar'da ekipman kiralama</h1>
+        <p class="section-heading">
+          Kiralama öncesinde seviyeniz, rüzgar bilgisi ve güvenli dönüş beceriniz değerlendirilir.
+          Önceliğimiz ekipmanı vermek değil, Akyarlar koyunda güvenli ve keyifli sürüş yapmanızı sağlamaktır.
+        </p>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.heroImage} alt="Rüzgar sörfü ekipmanı ve deniz" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Kiralama notları"
+        title="Kiralama ancak güvenli kullanım mümkünse önerilir"
+        text="Akyarlar'da rüzgar çoğu gün çalışır; bu yüzden doğru board, doğru yelken ve doğru saat seçimi önemlidir. Yeni başlayanlar için önce ders, sonra kontrollü kiralama önerilir."
+      />
+      <div class="grid">
+        <article class="card">
+          <h3>Seviyeye göre seçim</h3>
+          <p>Board ve yelken seçimi öğrencinin kilosu, rüzgar bilgisi, dönüş becerisi ve güncel meltem durumuna göre yapılır.</p>
+        </article>
+        <article class="card">
+          <h3>Ders sonrası kullanım</h3>
+          <p>6 saatlik özel ders paketinden sonra öğrencinin bağımsız pratik yapabileceği saatler ve ekipman birlikte planlanır.</p>
+        </article>
+        <article class="card">
+          <h3>Aile güvenliği</h3>
+          <p>Çocuklar ve aileler için güvenli alan, uygun hava ve sahil yoğunluğu dikkate alınmadan ekipman verilmez.</p>
+        </article>
+      </div>
+      <div class="actions">
+        <a class="button" href={site.whatsapp}>Uygunluk sor</a>
+        <a class="button ghost" href="/ruzgar-sorfu-dersi/">Önce ders al</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

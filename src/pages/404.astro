@@ -1,0 +1,25 @@
+---
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Sayfa Bulunamadı | Akyarlar Windsurf"
+  description="Aradığınız sayfa taşınmış olabilir. Akyarlar Windsurf ana sayfasına veya iletişim sayfasına geçebilirsiniz."
+  path="/404/"
+>
+  <section class="section alt">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1>Bu sayfa rüzgarla yer değiştirmiş olabilir</h1>
+      <p class="section-heading">
+        Eski WordPress bağlantılarından biri buraya geldiyse ana sayfadan devam edebilir veya
+        ders planı için doğrudan iletişime geçebilirsiniz.
+      </p>
+      <div class="actions">
+        <a class="button" href="/">Ana sayfa</a>
+        <a class="button secondary" href={site.whatsapp}>WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

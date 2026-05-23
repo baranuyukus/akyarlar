@@ -1,0 +1,166 @@
+---
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.akyarlarGuide;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.akyarlar}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Akyarlar Koyu rehberi</p>
+        <h1>Akyarlar Koyu: Bodrum'un berrak denizi ve rüzgar sporları cenneti</h1>
+        <p>
+          Akyarlar, Bodrum Yarımadası'nın güneybatısında yer alan; dalgalara kapalı yapısı,
+          berrak denizi, düzenli meltem rüzgarı ve ailelerin gün boyu rahat edebileceği sahil
+          yaşamıyla öne çıkan özel bir koydur.
+        </p>
+        <div class="actions">
+          <a class="button" href="/ruzgar-sorfu-dersi/">Rüzgar sörfü dersi</a>
+          <a class="button ghost" href="/bodrum-paddle/">Bodrum paddle rehberi</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <img src={site.heroImage} alt="Akyarlar Koyu denizi ve rüzgar sporları" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Bodrum'un en doğal ve güvenli koylarından biri</h2>
+        <p>
+          Akyarlar Bodrum Yarımadası'nın güneybatısında yer alan, berrak denizi, düzenli rüzgarı
+          ve sakin atmosferiyle yıllardır hem tatilcilerin hem de su sporlarıyla ilgilenenlerin
+          vazgeçilmez noktalarından biridir. Bodrum'un yoğun bölgelerinden uzaklaşmak isteyen
+          aileler için çok daha huzurlu bir alternatif sunar.
+        </p>
+        <p>
+          Bölgenin en büyük avantajlarından biri doğal koy yapısı sayesinde açık deniz dalgalarına
+          büyük ölçüde kapalı olmasıdır. Bu durum denizin çoğu gün sakin, güvenli ve kontrollü
+          kalmasını sağlar. Çocuklu aileler sahilde güvenle vakit geçirebilir, çocuklar denizde
+          rahatça oynayabilir ve yeni başlayanlar korkmadan su sporlarını deneyimleyebilir.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Akyarlar Koyu nerededir?</h2>
+        <p>
+          Akyarlar, Bodrum merkeze yaklaşık 21 kilometre uzaklıkta, Turgutreis'e yakın bir
+          sahil bölgesidir. Eskiden küçük bir balıkçı köyü karakteri taşıyan bölge, bugün
+          hâlâ daha sakin, doğal ve eski Bodrum hissini koruyan koylardan biri olarak bilinir.
+        </p>
+        <p>
+          Karşısındaki Kos Adası manzarası, özellikle gün doğumu paddle rotaları ve gün batımı
+          saatlerinde Akyarlar deneyimini Bodrum'un diğer koylarından ayırır.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Akyarlar denizi neden ünlü?</h2>
+        <p>
+          Akyarlar denizi için yapılan yorumların önemli bir kısmı berraklık, turkuaz renk,
+          serinlik ve temizlik etrafında birleşir. Koyun dalgayı kesen formu, açık denizle
+          bağlantısı ve gün içinde çalışan rüzgar suyu canlı tutar; bu da hem yüzme hem de
+          rüzgar sörfü dersi için güvenli bir zemin oluşturur.
+        </p>
+        <ul class="check-list">
+          <li>Sabah saatlerinde cam gibi sakin su.</li>
+          <li>Gün içinde rüzgarla tazelenen serin deniz.</li>
+          <li>Şnorkel, serbest yüzme ve paddle için berrak görüş.</li>
+          <li>Sahil üzerindeki işletmeler sayesinde aileler için rahat bekleme ve yemek imkanı.</li>
+        </ul>
+      </article>
+
+      <article class="article-section">
+        <h2>Bodrum rüzgar sörfü için Akyarlar</h2>
+        <p>
+          Düzenli meltem rüzgarı sayesinde Akyarlar, bodrum rüzgar sörfü aramalarında güçlü
+          bir lokasyondur. Başlangıç seviyesi öğrenciler için dalgasız koy yapısı ve sığ alanlar,
+          ileri seviyeler için ise açık deniz bağlantısı önemli avantaj sağlar. 5-6 yaşından
+          itibaren çocuklar ve ilk kez deneyecek yetişkinler burada rüzgarı daha sakin bir
+          ortamda tanıyabilir.
+        </p>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Spor</th>
+              <th>Uygunluk</th>
+              <th>En iyi zaman</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Windsurf</td>
+              <td>Mükemmel</td>
+              <td>Öğleden sonra meltem saatleri</td>
+            </tr>
+            <tr>
+              <td>Paddle Board</td>
+              <td>Mükemmel</td>
+              <td>06:00 - 09:00 arası sakin su</td>
+            </tr>
+            <tr>
+              <td>Wing Foil</td>
+              <td>Çok iyi</td>
+              <td>Stabil rüzgar oluşan günler</td>
+            </tr>
+            <tr>
+              <td>Kite Surf</td>
+              <td>Çok iyi</td>
+              <td>Uygun launch ve güvenli rüzgar koşulları</td>
+            </tr>
+            <tr>
+              <td>Kano ve yüzme</td>
+              <td>İdeal</td>
+              <td>Sabah ve gün batımına yakın saatler</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="article-section">
+        <h2>Aileler için neden rahat?</h2>
+        <p>
+          Akyarlar'da ders yalnızca öğrencinin suya girmesiyle sınırlı değildir. Aileler sahil
+          üzerindeki işletmelerde oturabilir, yemek yiyebilir, çocuklarının dersini izleyebilir
+          ve tekne destekli çalışmalarda sürece daha yakından dahil olabilir. Bu yüzden Akyarlar
+          Windsurf, kendini klasik bir kiralama noktası yerine aile ortamında eğitim veren bir
+          okul olarak konumlandırır.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Akyarlar'da tatil ve yaşam ritmi</h2>
+        <p>
+          Akyarlar yalnızca spor yapılan bir koy değildir. Gün batımı izlemek, deniz kenarında
+          kahve içmek, paddle sonrası sakin koylarda yüzmek ve sahil restoranlarında Ege
+          mezeleriyle deniz ürünleri tatmak bölgenin doğal deneyiminin parçasıdır.
+        </p>
+        <p>
+          Konaklama tarafında butik otel, apart, pansiyon ve deniz manzaralı villa seçenekleri
+          daha sakin bir tatil isteyenlere hitap eder. Yaz aylarında Bodrum merkezden ulaşım
+          yaklaşık 35-40 dakika, Turgutreis'ten ulaşım ise yaklaşık 10 dakika sürebilir.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Sık aranan konular</h2>
+        <ul class="keyword-cloud">
+          <li>bodrum rüzgar sörfü</li>
+          <li>bodrum paddle</li>
+          <li>akyarlar koyu</li>
+          <li>akyarlar denizi</li>
+          <li>bodrum windsurf</li>
+          <li>akyarlar beach</li>
+          <li>bodrum su sporları</li>
+          <li>paddle board bodrum</li>
+          <li>bodrum wing foil</li>
+          <li>bodrum kite surf</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

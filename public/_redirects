@@ -1,0 +1,16 @@
+# Cloudflare Pages redirect rules for the old WordPress site.
+# Replace or extend these with the exact legacy URL export before launch.
+/index.php / 301
+/anasayfa / 301
+/anasayfa/ / 301
+/hakkimizda /bodrum-ruzgar-sorfu-okulu/ 301
+/hakkimizda/ /bodrum-ruzgar-sorfu-okulu/ 301
+/ruzgar-sorfu-egitimi /ruzgar-sorfu-dersi/ 301
+/ruzgar-sorfu-egitimi/ /ruzgar-sorfu-dersi/ 301
+/bodrum-ruzgar-sorfu /bodrum-ruzgar-sorfu-okulu/ 301
+/bodrum-ruzgar-sorfu/ /bodrum-ruzgar-sorfu-okulu/ 301
+/windsurf-kiralama /kiralama/ 301
+/windsurf-kiralama/ /kiralama/ 301
+/iletisim.html /iletisim/ 301
+/contact /iletisim/ 301
+/contact/ /iletisim/ 301

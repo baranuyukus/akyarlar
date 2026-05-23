@@ -1,0 +1,76 @@
+---
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.lesson;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.lesson}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Rüzgar sörfü dersi</p>
+        <h1>6 saatlik özel rüzgar sörfü dersi</h1>
+        <p>
+          Özel eğitim paketimiz toplam 6 ders saatinden oluşur. Bu süreçte yalnızca board üzerinde
+          durmayı değil; gerçek rüzgar okumayı, yön değiştirmeyi, serbest sürüş yapmayı ve farklı
+          rüzgar açılarını kullanmayı öğrenirsiniz.
+        </p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>İlk derste gidip dönme</h3>
+          <p>Doğru ekipman ve uygun hava koşullarında öğrencilerin büyük çoğunluğu ilk ders sonunda kontrollü ilerleyip geri dönebilir.</p>
+        </article>
+        <article class="card">
+          <h3>3 saatten sonra tekne</h3>
+          <p>İlk temel eğitim tamamlandıktan sonra tekne destekli açık alan çalışmalarına geçilir; öğrenci kıyıya bağlı kalmadan gerçek sürüş hissini kazanır.</p>
+        </article>
+        <article class="card">
+          <h3>6 saat sonunda temel özgürlük</h3>
+          <p>Paket sonunda kendi başına gidip dönebilen, güvenli sürüş yapabilen ve farklı koylarda temel windsurf kullanabilecek seviye hedeflenir.</p>
+        </article>
+      </div>
+      <div class="actions">
+        <a class="button" href={site.whatsapp}>Ders saati sor</a>
+        <a class="button secondary" href={`tel:${site.phoneE164}`}>Telefon et</a>
+        <a class="button ghost" href="/bodrum-ruzgar-sorfu-okulu/">Okulu tanı</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band soft-band">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Ders yaklaşımı</p>
+        <h2>Bu işi ticaret gibi değil, gerçekten öğretmek için yapıyoruz</h2>
+        <p>
+          35 yılı aşkın süredir aynı koyda yaşayan ve aktif olarak denizin içinde olan bir aile
+          olarak rüzgar sörfünü ticari bir aktivite değil, paylaşılması gereken bir yaşam kültürü
+          olarak görüyoruz. Bu yüzden dersin temposu rüzgara, öğrencinin enerjisine ve tatil
+          programına göre planlanır.
+        </p>
+      </div>
+      <ul class="plain-list">
+        <li>Rüzgar yönünü okuma, güvenli alan seçimi ve kıyıya dönüş alışkanlığı.</li>
+        <li>Yelken hakimiyeti, dönüş mantığı ve farklı rüzgar açılarını kullanma.</li>
+        <li>İpsiz serbest gidiş gelişlerle özgür sürüş pratiği.</li>
+        <li>Aile üyelerinin süreci izlemesine imkan veren tekne destekli eğitim.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">İlgili sayfalar</p>
+        <h2>Derse başlamadan önce</h2>
+        <p>
+          Akyarlar koyunun neden güvenli olduğunu görmek için <a href="/akyarlar/">Akyarlar spot rehberini</a>,
+          aile ortamındaki eğitim yaklaşımımızı okumak için <a href="/bodrum-ruzgar-sorfu-okulu/">Bodrum rüzgar sörfü okulu</a>
+          sayfasını inceleyebilirsiniz.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
