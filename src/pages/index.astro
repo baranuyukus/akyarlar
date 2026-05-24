@@ -1,4 +1,5 @@
 ---
+import OptimizedImage from "@components/OptimizedImage.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import WindguruWidget from "@components/WindguruWidget.astro";
 import { faqSets, pageMeta, site } from "@data/site";
@@ -8,7 +9,19 @@ const meta = pageMeta.home;
 ---
 
 <BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.home}>
-  <section class="hero" style={`--hero-image: url('${site.heroImage}')`}>
+  <section class="hero">
+    <OptimizedImage
+      class="hero-media"
+      src={site.heroImage}
+      webp={site.heroImageWebp}
+      avif={site.heroImageAvif}
+      alt="Akyarlar koyunda berrak deniz ve rüzgar sörfü okulu"
+      loading="eager"
+      fetchpriority="high"
+      width={1600}
+      height={1063}
+      sizes="100vw"
+    />
     <div class="hero-inner">
       <p class="eyebrow">Bodrum Akyarlar rüzgar sörfü okulu</p>
       <h1>Akyarlar Windsurf</h1>
@@ -88,7 +101,14 @@ const meta = pageMeta.home;
         </div>
       </div>
       <div class="image-panel quiet">
-        <img src={site.familyImage} alt="Akyarlar koyunda aile tatili ve berrak deniz" loading="lazy" />
+        <OptimizedImage
+          src={site.familyImage}
+          webp={site.familyImageWebp}
+          avif={site.familyImageAvif}
+          alt="Akyarlar koyunda aile tatili ve berrak deniz"
+          width={1400}
+          height={930}
+        />
       </div>
     </div>
   </section>
@@ -114,7 +134,14 @@ const meta = pageMeta.home;
         </div>
       </div>
       <div class="image-panel quiet">
-        <img src={site.heroImage} alt="Akyarlar koyunda berrak deniz ve sakin sahil" loading="lazy" />
+        <OptimizedImage
+          src={site.heroImage}
+          webp={site.heroImageWebp}
+          avif={site.heroImageAvif}
+          alt="Akyarlar koyunda berrak deniz ve sakin sahil"
+          width={1600}
+          height={1063}
+        />
       </div>
     </div>
   </section>

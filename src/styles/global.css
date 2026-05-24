@@ -5,14 +5,14 @@
   --line: #cfe7ee;
   --paper: #f4fbfd;
   --surface: #ffffff;
-  --sea: #139fc0;
+  --sea: #087f99;
   --deep: #145b73;
   --sky: #dff5fb;
-  --coral: #d9705f;
+  --coral: #b84e42;
   --sun: #f1b84b;
   --foam: #e9f8fb;
   --whatsapp: #25d366;
-  --whatsapp-dark: #128c4a;
+  --whatsapp-dark: #0b7a3d;
   --shadow: 0 14px 34px rgba(20, 91, 115, 0.11);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -262,23 +262,27 @@ main {
   color: white;
 }
 
-.hero::before,
 .hero::after {
   position: absolute;
   inset: 0;
   content: "";
 }
 
-.hero::before {
-  background-image: var(--hero-image);
-  background-position: center;
-  background-size: cover;
-}
-
 .hero::after {
   background:
     linear-gradient(90deg, rgba(10, 47, 62, 0.72), rgba(10, 47, 62, 0.2) 64%, rgba(10, 47, 62, 0.08)),
     linear-gradient(0deg, rgba(10, 47, 62, 0.32), transparent 46%);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-inner {
@@ -460,6 +464,11 @@ h3 {
   object-fit: cover;
 }
 
+.image-panel picture {
+  display: block;
+  height: 100%;
+}
+
 .check-list,
 .plain-list {
   display: grid;
@@ -568,6 +577,19 @@ h3 {
   padding: 10px;
   background: var(--surface);
   box-shadow: 0 14px 34px rgba(20, 91, 115, 0.1);
+}
+
+.wind-placeholder {
+  display: grid;
+  min-height: 120px;
+  place-items: center;
+  color: var(--muted);
+  text-align: center;
+  font-weight: 800;
+}
+
+.wind-widget[data-windguru-loaded] .wind-placeholder {
+  display: none;
 }
 
 .wind-widget iframe,

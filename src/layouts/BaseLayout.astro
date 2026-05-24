@@ -37,6 +37,7 @@ const canonical = new URL(path, site.domain).toString();
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={site.socialImage} />
+    <link rel="preload" as="image" href={site.heroImageAvif} type="image/avif" imagesizes="100vw" />
     <link rel="icon" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <StructuredData pageTitle={title} pageDescription={description} pageUrl={canonical} includeFaq={includeFaq} faqItems={faqItems} />

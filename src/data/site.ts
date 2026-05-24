@@ -16,7 +16,11 @@ export const site = {
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.2556213194066!2d27.291960075893535!3d36.96806347219974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14be0c5e97360b45%3A0x5bac1a1939245dc0!2sAkyarlar%20Windsurf!5e1!3m2!1str!2str!4v1779571166160!5m2!1str!2str",
   heroImage: "/images/akyarlar-koyu-deniz.jpg",
+  heroImageWebp: "/images/akyarlar-koyu-deniz.webp",
+  heroImageAvif: "/images/akyarlar-koyu-deniz.avif",
   familyImage: "/images/akyarlar-koyu-aile.jpg",
+  familyImageWebp: "/images/akyarlar-koyu-aile.webp",
+  familyImageAvif: "/images/akyarlar-koyu-aile.avif",
   socialImage: "https://www.akyarlarwindsurf.com/images/akyarlar-koyu-deniz.jpg",
   locale: "tr_TR"
 };
@@ -89,7 +93,7 @@ export const faqs = [
   {
     question: "Dersler özel mi grup mu?",
     answer:
-      "Öğrenci seviyesine göre planlıyoruz ancak odak noktamız birebir kaliteli eğitim, güvenli tekrar ve gerçekten öğretmek."
+      "Önceliğimiz özel ders ve öğrencinin kendi öğrenme temposudur. Ders planı yaş, seviye, yüzme bilgisi, rüzgar ve tatil programına göre kişiye özel hazırlanır."
   },
   {
     question: "Akyarlar neden başlangıç için uygun?",
@@ -141,7 +145,7 @@ export const faqSets = {
     {
       question: "Dersler grup mu özel mi?",
       answer:
-        "Öğrenci seviyesine göre plan yapılır; ana odak kalabalık ders değil, birebir kaliteli eğitim ve öğrencinin gerçekten öğrenmesidir."
+        "Öncelikli çalışma modelimiz özel derstir. Ana odak öğrencinin kendi temposunda, güvenli tekrarlarla ve birebir yönlendirmeyle gerçekten öğrenmesidir."
     },
     {
       question: "Aileler ders sırasında bekleyebilir mi?",

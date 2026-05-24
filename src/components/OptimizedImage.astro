@@ -1,0 +1,40 @@
+---
+type Props = {
+  src: string;
+  avif?: string;
+  webp?: string;
+  alt: string;
+  class?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "low" | "auto";
+  width?: number;
+  height?: number;
+  sizes?: string;
+};
+
+const {
+  src,
+  avif,
+  webp,
+  alt,
+  class: className,
+  loading = "lazy",
+  fetchpriority,
+  width,
+  height,
+  sizes = "(max-width: 980px) 100vw, 50vw"
+} = Astro.props;
+---
+
+<picture class={className}>
+  {avif && <source srcset={avif} type="image/avif" sizes={sizes} />}
+  {webp && <source srcset={webp} type="image/webp" sizes={sizes} />}
+  <img
+    src={src}
+    alt={alt}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    width={width}
+    height={height}
+  />
+</picture>
