@@ -1,6 +1,20 @@
 # Cloudflare Pages redirect rules for the old WordPress site.
 # Replace or extend these with the exact legacy URL export before launch.
 /index.php / 301
+/index.php/ / 301
+/index.php/iletisim /iletisim/ 301
+/index.php/iletisim/ /iletisim/ 301
+/index.php/blog-2 /akyarlar-koyu-rehberi/ 301
+/index.php/blog-2/ /akyarlar-koyu-rehberi/ 301
+/index.php/blog /akyarlar-koyu-rehberi/ 301
+/index.php/blog/ /akyarlar-koyu-rehberi/ 301
+/index.php/category/blog /akyarlar-koyu-rehberi/ 301
+/index.php/category/blog/ /akyarlar-koyu-rehberi/ 301
+/index.php/slide-page/slider / 301
+/index.php/slide-page/slider/ / 301
+/index.php/slide/1-2/attachment/92 / 301
+/index.php/slide/1-2/attachment/92/ / 301
+/index.php/* / 301
 /anasayfa / 301
 /anasayfa/ / 301
 /hakkimizda /bodrum-ruzgar-sorfu-okulu/ 301
@@ -14,3 +28,17 @@
 /iletisim.html /iletisim/ 301
 /contact /iletisim/ 301
 /contact/ /iletisim/ 301
+/type/image /akyarlar-koyu-rehberi/ 301
+/type/image/ /akyarlar-koyu-rehberi/ 301
+/2021/06/29/akyarlar-sikca-sorulan-sorular /akyarlar-koyu-rehberi/ 301
+/2021/06/29/akyarlar-sikca-sorulan-sorular/ /akyarlar-koyu-rehberi/ 301
+/logoh / 301
+/logoh/ / 301
+/newb / 301
+/newb/ / 301
+/shutterstock_1129005650 /akyarlar-koyu-rehberi/ 301
+/shutterstock_1129005650/ /akyarlar-koyu-rehberi/ 301
+/shutterstock_1129005653 /akyarlar-koyu-rehberi/ 301
+/shutterstock_1129005653/ /akyarlar-koyu-rehberi/ 301
+/shutterstock_1342295135 /akyarlar-koyu-rehberi/ 301
+/shutterstock_1342295135/ /akyarlar-koyu-rehberi/ 301
