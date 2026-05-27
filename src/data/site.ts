@@ -241,27 +241,32 @@ export const faqSets = {
     {
       question: "Bodrum Akyarlar rüzgar durumu rüzgar sörfü için uygun mu?",
       answer:
-        "Akyarlar yaz sezonunda özellikle öğleden sonra düzenli meltem aldığı için rüzgar sörfü için çok uygundur. Koyun dalgalara kapalı yapısı başlangıç derslerini daha güvenli hale getirir."
+        "Evet. Akyarlar, özellikle yaz aylarında düzenli meltem rüzgarı sayesinde windsurf için oldukça uygun bir koydur. Kontrollü rüzgar ve dalgasız deniz yapısı başlangıç seviyesindeki öğrenciler için büyük avantaj sağlar."
     },
     {
-      question: "Akyarlar rüzgar durumu paddle için uygun mu?",
+      question: "Akyarlar Windguru verilerine bakmak yeterli mi?",
       answer:
-        "Paddle için en uygun zaman genellikle sabah saatleridir. Sabah erken saatlerde deniz daha sakin ve cam gibi olur; öğleden sonra meltem artınca rüzgar sörfü daha uygun hale gelir."
+        "Akyarlar Windguru verileri rüzgar tahmini için faydalıdır ancak tek başına yeterli değildir. Ders planlaması yaparken sahadaki gerçek rüzgar, deniz durumu ve öğrencinin seviyesi birlikte değerlendirilmelidir."
     },
     {
-      question: "Akyarlar neden dalgasız ve kontrollü bir koydur?",
+      question: "Bodrum paddle için Akyarlar uygun mu?",
       answer:
-        "Akyarlar'ın fiziksel koy yapısı açık deniz dalgalarını büyük ölçüde keser. Bu nedenle su yüzeyi birçok güne göre daha kontrollüdür ve eğitim için güvenli bir alan oluşur."
+        "Evet. Sabah saatlerinde denizin sakin olması Akyarlar'ı paddle board için çok uygun hale getirir. Özellikle gün doğumu saatleri paddle için en keyifli zamanlardır."
     },
     {
-      question: "Rüzgar tahminini nereden kontrol edebilirim?",
+      question: "Akyarlar'da çocuklar rüzgar sörfü öğrenebilir mi?",
       answer:
-        "Bu sayfada Windguru tahmin tablosu ve Windy rüzgar haritası birlikte gösterilir. Böylece rüzgar hızı, yönü, gust ve genel hava durumunu iki farklı kaynaktan kontrol edebilirsiniz."
+        "Evet. Uygun ekipman, doğru eğitmen ve güvenli hava koşullarıyla 5-6 yaşlarından itibaren çocuklar rüzgar sörfüne başlayabilir."
     },
     {
-      question: "Ders planı sadece rüzgar hızına göre mi yapılır?",
+      question: "Bodrum rüzgar durumu her koyda aynı mı?",
       answer:
-        "Hayır. Ders planı rüzgar hızı, rüzgar yönü, deniz durumu, öğrencinin seviyesi ve yaşına göre yapılır. Çocuklar ve yeni başlayanlar için güvenli saatler özellikle seçilir."
+        "Hayır. Bodrum'da rüzgar koydan koya değişir. Bu nedenle genel Bodrum rüzgar tahmini yerine Akyarlar gibi bölgesel rüzgar durumuna bakmak daha doğru olur."
+    },
+    {
+      question: "Akyarlar windsurf için başlangıç seviyesine uygun mu?",
+      answer:
+        "Evet. Sığ deniz, dalgasız koy yapısı ve kontrollü rüzgar sayesinde Akyarlar başlangıç seviyesinde windsurf öğrenmek için Bodrum'daki en uygun koylardan biridir."
     }
   ],
   rental: [
