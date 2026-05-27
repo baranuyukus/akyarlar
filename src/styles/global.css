@@ -603,6 +603,21 @@ h3 {
   min-height: 540px;
 }
 
+.windy-panel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 14px 34px rgba(20, 91, 115, 0.1);
+}
+
+.windy-panel iframe {
+  display: block;
+  width: 100%;
+  min-height: 560px;
+  border: 0;
+}
+
 .experience-section {
   background: #f8fcfd;
 }
@@ -1077,6 +1092,10 @@ h3 {
 
   .wind-widget iframe {
     min-height: 440px;
+  }
+
+  .windy-panel iframe {
+    min-height: 460px;
   }
 
   .nav a,

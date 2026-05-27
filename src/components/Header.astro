@@ -62,9 +62,12 @@ const isCurrent = (href: string) => currentPath === href;
           <a href="/bodrum-su-sporlari/" aria-current={isCurrent("/bodrum-su-sporlari/") ? "page" : undefined}>
             Su Sporları
           </a>
+          <a href="/bodrum-akyarlar-ruzgar-durumu/" aria-current={isCurrent("/bodrum-akyarlar-ruzgar-durumu/") ? "page" : undefined}>
+            Rüzgar Durumu
+          </a>
         </div>
       </div>
-      <a href="/#ruzgar">Rüzgar</a>
+      <a href="/bodrum-akyarlar-ruzgar-durumu/" aria-current={isCurrent("/bodrum-akyarlar-ruzgar-durumu/") ? "page" : undefined}>Rüzgar</a>
       <a href="/iletisim/" aria-current={isCurrent("/iletisim/") ? "page" : undefined}>İletişim</a>
     </nav>
 

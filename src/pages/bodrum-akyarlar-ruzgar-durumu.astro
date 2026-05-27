@@ -1,0 +1,139 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import WindguruWidget from "@components/WindguruWidget.astro";
+import { faqSets, pageMeta, site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = pageMeta.wind;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.wind}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Bodrum Akyarlar rüzgar durumu</p>
+        <h1>Bodrum Akyarlar rüzgar durumu: Windguru ve Windy tahmini</h1>
+        <p>
+          <strong>Bodrum Akyarlar rüzgar durumu</strong> rüzgar sörfü dersi, ekipman kiralama,
+          <strong>bodrum paddle</strong> ve ailece deniz planı için gün içinde değişebilir.
+          Bu sayfada Akyarlar'ı hem Windguru tablo tahminiyle hem de Windy rüzgar haritasıyla
+          iki farklı kaynaktan kontrol edebilirsiniz.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Bugünün rüzgarını sor</a>
+          <a class="button ghost" href="/ruzgar-sorfu-dersi/">Rüzgar sörfü dersi</a>
+          <a class="button ghost" href="/bodrum-paddle/">Paddle rehberi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WindguruWidget />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Windy rüzgar haritası"
+        title="Akyarlar rüzgarını harita üzerinden kontrol edin"
+        text="Windy haritası rüzgar yönünü, çevredeki akışı ve Akyarlar koyunun rüzgar alma biçimini görsel olarak takip etmek için kullanışlıdır."
+      />
+      <div class="windy-panel">
+        <iframe
+          width="650"
+          height="450"
+          src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=36.919&lon=27.291&detailLat=36.968&detailLon=27.291&detail=true&message=true"
+          frameborder="0"
+          loading="lazy"
+          title="Bodrum Akyarlar Windy rüzgar durumu haritası"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Paddle mı windsurf mü?"
+        title="Akyarlar'da günün ritmi rüzgara göre değişir"
+        text="Akyarlar kapalı koy yapısı, dalgasız su yüzeyi ve düzenli meltemi sayesinde hem sabah paddle hem de öğleden sonra rüzgar sörfü için çok güçlü bir lokasyondur."
+      />
+      <div class="grid">
+        <article class="card">
+          <h3>Paddle için uygunluk</h3>
+          <p>
+            <strong>Akyarlar paddle</strong> için en keyifli zaman çoğunlukla sabah erken saatlerdir.
+            Deniz daha sakin, su yüzeyi daha düz ve rüzgar daha hafif olur. Bu saatler SUP paddle,
+            aile seansı, çocuk denemeleri ve gün doğumu rotaları için idealdir.
+          </p>
+          <a href="/bodrum-paddle/">Bodrum paddle sayfası</a>
+        </article>
+        <article class="card">
+          <h3>Rüzgar sörfü için uygunluk</h3>
+          <p>
+            <strong>Akyarlar rüzgar sörfü</strong> için öğleden sonra oluşan meltem çok değerlidir.
+            Koyun dalgalara kapalı olması yeni başlayanların dengede kalmasını kolaylaştırır,
+            ileri seviyeler için ise düzenli rüzgar daha uzun sürüşler sağlar.
+          </p>
+          <a href="/ruzgar-sorfu-dersi/">Rüzgar sörfü dersi</a>
+        </article>
+        <article class="card">
+          <h3>Kapalı ve dalgasız koy avantajı</h3>
+          <p>
+            Akyarlar fiziksel olarak açık deniz dalgalarını büyük ölçüde kesen bir koydur.
+            Bu nedenle <strong>bodrum akyarlar rüzgar durumu</strong> uygun olduğunda eğitim alanı
+            daha kontrollü, daha güvenli ve aileler için daha rahat hale gelir.
+          </p>
+          <a href="/akyarlar-koyu-rehberi/">Akyarlar koyu rehberi</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Bodrum Akyarlar rüzgar durumu nasıl okunmalı?</h2>
+        <p>
+          Rüzgar tahmininde yalnızca hız değerine bakmak yeterli değildir. Rüzgar yönü, ani
+          esişler, deniz yüzeyi ve öğrencinin seviyesi birlikte değerlendirilmelidir. Bu yüzden
+          <strong>Windguru Akyarlar</strong> tablosu saatlik detay verirken, Windy haritası
+          rüzgarın bölgedeki genel akışını görmeye yardımcı olur.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Akyarlar'da rüzgar sörfü ve paddle aynı gün yapılır mı?</h2>
+        <p>
+          Evet, birçok gün aynı koyda sabah <strong>paddle board</strong>, öğleden sonra ise
+          <strong>rüzgar sörfü</strong> için uygun koşullar oluşabilir. Sabah saatlerinde deniz
+          daha sakin ve cam gibi olur. Öğleden sonra meltem belirginleştiğinde windsurf, wing foil
+          ve ileri seviye rüzgar sporları için daha güçlü koşullar oluşur.
+        </p>
+      </article>
+
+      <article class="article-section">
+        <h2>Ders planı için rüzgar tahmini neden önemli?</h2>
+        <p>
+          Çocuklar, ilk kez deneyecek yetişkinler ve ileri seviye sporcular aynı rüzgarda aynı
+          şekilde çalışmaz. Akyarlar Windsurf'te ders planı rüzgar tahmini, deniz durumu ve
+          öğrencinin seviyesine göre yapılır. Amaç yalnızca suya çıkmak değil; güvenli, kontrollü
+          ve gerçekten öğretici bir ders yapmaktır.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="SSS" title="Bodrum Akyarlar rüzgar durumu hakkında sık sorulanlar" />
+      <div class="faq-grid">
+        {faqSets.wind.map((faq) => (
+          <article class="faq">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

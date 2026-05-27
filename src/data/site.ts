@@ -32,6 +32,7 @@ export const navItems = [
   { href: "/kiralama/", label: "Kiralama" },
   { href: "/akyarlar/", label: "Akyarlar" },
   { href: "/akyarlar-koyu-rehberi/", label: "Akyarlar Rehberi" },
+  { href: "/bodrum-akyarlar-ruzgar-durumu/", label: "Rüzgar Durumu" },
   { href: "/bodrum-paddle/", label: "Bodrum Paddle" },
   { href: "/bodrum-su-sporlari/", label: "Su Sporları" },
   { href: "/iletisim/", label: "İletişim" }
@@ -42,6 +43,16 @@ export const guideLinks = [
     title: "Akyarlar Koyu Rehberi",
     href: "/akyarlar-koyu-rehberi/",
     text: "Akyarlar denizi, Meteor Beach, Kos manzarası, ulaşım, konaklama ve sakin Bodrum atmosferi."
+  },
+  {
+    title: "Akyarlar Sıkça Sorulan Sorular",
+    href: "/akyarlar-sikca-sorulan-sorular/",
+    text: "Bodrum merkez Akyarlar arası kaç km, nasıl gidilir, Akyarlar denizi nasıl ve hangi ilçeye bağlı?"
+  },
+  {
+    title: "Bodrum Akyarlar Rüzgar Durumu",
+    href: "/bodrum-akyarlar-ruzgar-durumu/",
+    text: "Windguru ve Windy üzerinden Akyarlar rüzgar tahmini, paddle ve rüzgar sörfü için uygun saatler."
   },
   {
     title: "Bodrum Paddle",
@@ -170,6 +181,38 @@ export const faqSets = {
         "Evet. Düzenli termik rüzgar harness, footstrap, hız kontrolü ve ileri seviye dönüş çalışmaları için de uygun koşullar sunar."
     }
   ],
+  akyarlarFaq: [
+    {
+      question: "Bodrum merkez Akyarlar arası kaç km?",
+      answer:
+        "Bodrum merkez ile Akyarlar arası D330 güzergahı üzerinden yaklaşık 23-24 kilometredir. Yol durumu ve sezon yoğunluğuna göre ulaşım çoğu zaman 35-40 dakika sürer."
+    },
+    {
+      question: "Bodrum merkezden Akyarlar'a nasıl gidilir?",
+      answer:
+        "Bodrum merkez otogardan veya güzergah üzerindeki duraklardan Akyarlar yönüne giden belediye otobüsleri ve özel otobüsler kullanılabilir. Özel araçla D330 üzerinden Turgutreis yönüne ilerlenir."
+    },
+    {
+      question: "Akyarlar denizi nasıl?",
+      answer:
+        "Akyarlar denizi berrak, serin, temiz ve koy yapısı sayesinde birçok güne göre kontrollüdür. Sabahları paddle ve yüzme, öğleden sonra ise rüzgar sörfü için uygundur."
+    },
+    {
+      question: "Bodrum Akyarlar hangi ilçeye bağlıdır?",
+      answer:
+        "Akyarlar, Muğla'nın Bodrum ilçesine bağlıdır. Bodrum Yarımadası'nın güneybatısında, Turgutreis'e yakın bir sahil bölgesidir."
+    },
+    {
+      question: "Akyarlar rüzgar sörfü için uygun mu?",
+      answer:
+        "Evet. Dalgalara kapalı koy yapısı, sığ alanlar ve düzenli meltem rüzgarı Akyarlar'ı hem başlangıç hem de ileri seviye rüzgar sörfü için güçlü bir lokasyon yapar."
+    },
+    {
+      question: "Akyarlar çocuklu aileler için uygun mu?",
+      answer:
+        "Evet. Temiz sahil, denize yakın işletmeler, yürünebilir kıyı yapısı ve kontrollü deniz koşulları çocuklu aileler için rahat bir ortam sunar."
+    }
+  ],
   paddle: [
     {
       question: "Bodrum paddle için Akyarlar neden tercih edilir?",
@@ -192,6 +235,33 @@ export const faqSets = {
       question: "Akyarlar wing foil ve ileri seviye rüzgar sporları için uygun mu?",
       answer:
         "Evet. Düzenli meltem, açık rüzgar koridoru ve temiz deniz uygun günlerde wing foil ve ileri seviye windsurf çalışmaları için avantaj sağlar."
+    }
+  ],
+  wind: [
+    {
+      question: "Bodrum Akyarlar rüzgar durumu rüzgar sörfü için uygun mu?",
+      answer:
+        "Akyarlar yaz sezonunda özellikle öğleden sonra düzenli meltem aldığı için rüzgar sörfü için çok uygundur. Koyun dalgalara kapalı yapısı başlangıç derslerini daha güvenli hale getirir."
+    },
+    {
+      question: "Akyarlar rüzgar durumu paddle için uygun mu?",
+      answer:
+        "Paddle için en uygun zaman genellikle sabah saatleridir. Sabah erken saatlerde deniz daha sakin ve cam gibi olur; öğleden sonra meltem artınca rüzgar sörfü daha uygun hale gelir."
+    },
+    {
+      question: "Akyarlar neden dalgasız ve kontrollü bir koydur?",
+      answer:
+        "Akyarlar'ın fiziksel koy yapısı açık deniz dalgalarını büyük ölçüde keser. Bu nedenle su yüzeyi birçok güne göre daha kontrollüdür ve eğitim için güvenli bir alan oluşur."
+    },
+    {
+      question: "Rüzgar tahminini nereden kontrol edebilirim?",
+      answer:
+        "Bu sayfada Windguru tahmin tablosu ve Windy rüzgar haritası birlikte gösterilir. Böylece rüzgar hızı, yönü, gust ve genel hava durumunu iki farklı kaynaktan kontrol edebilirsiniz."
+    },
+    {
+      question: "Ders planı sadece rüzgar hızına göre mi yapılır?",
+      answer:
+        "Hayır. Ders planı rüzgar hızı, rüzgar yönü, deniz durumu, öğrencinin seviyesi ve yaşına göre yapılır. Çocuklar ve yeni başlayanlar için güvenli saatler özellikle seçilir."
     }
   ],
   rental: [
@@ -245,6 +315,12 @@ export const pageMeta = {
       "Akyarlar Koyu rehberi: Bodrum'un doğal ve güvenli koyu, berrak deniz, aile dostu sahil, rüzgar sörfü, paddle, restoranlar ve ulaşım.",
     path: "/akyarlar-koyu-rehberi/"
   },
+  akyarlarFaq: {
+    title: "Akyarlar Sıkça Sorulan Sorular | Bodrum Akyarlar Kaç Km?",
+    description:
+      "Akyarlar sıkça sorulan sorular: Bodrum merkez Akyarlar arası kaç km, D330 üzerinden nasıl gidilir, otobüs var mı, Akyarlar denizi nasıl ve rüzgar sörfü için uygun mu?",
+    path: "/akyarlar-sikca-sorulan-sorular/"
+  },
   paddle: {
     title: "Bodrum Paddle | Akyarlar'da SUP Paddle ve Gün Doğumu Turları",
     description:
@@ -256,6 +332,12 @@ export const pageMeta = {
     description:
       "Bodrum su sporları için Akyarlar rehberi. Windsurf, wing foil, kite surf, hydrofoil, paddle board, kano ve yüzme için koy koşulları.",
     path: "/bodrum-su-sporlari/"
+  },
+  wind: {
+    title: "Bodrum Akyarlar Rüzgar Durumu | Windguru ve Windy Tahmini",
+    description:
+      "Bodrum Akyarlar rüzgar durumu: Windguru ve Windy tahmini, paddle için uygun saatler, rüzgar sörfü için meltem koşulları ve dalgasız kapalı koy avantajı.",
+    path: "/bodrum-akyarlar-ruzgar-durumu/"
   },
   contact: {
     title: "Akyarlar Windsurf İletişim | Bodrum Windsurf Telefon",
