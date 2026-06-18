@@ -226,6 +226,33 @@ main {
   box-shadow: 0 10px 22px rgba(20, 91, 115, 0.16);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  background: var(--surface);
+}
+
+.language-switcher a {
+  display: inline-flex;
+  min-width: 34px;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.language-switcher a[aria-current="true"] {
+  background: var(--foam);
+  color: var(--deep);
+}
+
 .header-cta,
 .button.whatsapp,
 .button[href*="wa.me"] {
@@ -990,6 +1017,10 @@ h3 {
 
   .header-cta {
     margin-left: auto;
+  }
+
+  .language-switcher {
+    order: 3;
   }
 
   .nav {

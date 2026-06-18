@@ -1,0 +1,14 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.rental;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.rental}>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="Bodrum windsurf rental" title="Windsurf equipment rental in Akyarlar" text="Akyarlar windsurf rental is planned around level, wind knowledge and safe return ability. Beginners are usually guided toward lessons first." /><div class="actions"><a class="button" href={site.whatsapp}>Ask availability</a><a class="button ghost" href="/en/windsurf-lessons-bodrum/">Start with lessons</a></div></div></section>
+  <section class="section"><div class="container"><div class="grid"><article class="card"><h3>Level check</h3><p>Board and sail choice depends on your weight, wind level and ability to return safely.</p></article><article class="card"><h3>Lesson-first approach</h3><p>New students should learn the basics before independent equipment use.</p></article><article class="card"><h3>Daily wind decision</h3><p>Rental can change according to gusts, sea surface and beach safety.</p></article></div></div></section>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="FAQ" title="Windsurf rental questions" /><div class="faq-grid">{enFaqSets.rental.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div></div></section>
+</BaseLayout>

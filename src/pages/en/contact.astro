@@ -1,0 +1,26 @@
+---
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.contact;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.contact}>
+  <section class="section alt">
+    <div class="container contact-panel">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Book windsurf lessons in Bodrum Akyarlar</h1>
+        <p>Contact Akyarlar Windsurf before arriving so lesson time, wind forecast and equipment can be planned safely for your level.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href={`tel:${site.phoneE164}`}><span>Phone</span><span>{site.phoneDisplay}</span></a>
+        <a class="contact-link" href={site.whatsapp}><span>WhatsApp</span><span>Send message</span></a>
+        <a class="contact-link" href={`mailto:${site.email}`}><span>Email</span><span>{site.email}</span></a>
+        <a class="contact-link" href={site.mapUrl}><span>Address</span><span>Akyarlar, Bodrum</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="section"><div class="container split"><div><p class="eyebrow">Location</p><h2>{site.address}</h2><p>Akyarlar Windsurf is located in Akyarlar Bay, Bodrum, for private windsurf lessons, children lessons and equipment support.</p><div class="actions"><a class="button" href={site.whatsapp}>Ask for a reservation</a><a class="button ghost" href={site.mapUrl}>Open in Google Maps</a></div></div><div class="map-panel"><iframe src={site.mapEmbedUrl} width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Akyarlar Windsurf Google Maps location"></iframe></div></div></section>
+</BaseLayout>

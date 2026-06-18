@@ -2,6 +2,7 @@
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import StructuredData from "@components/StructuredData.astro";
+import { findRouteAlternates } from "@data/i18n";
 import { site } from "@data/site";
 import "@styles/global.css";
 
@@ -9,24 +10,64 @@ type Props = {
   title: string;
   description: string;
   path: string;
+  lang?: "tr" | "en";
+  locale?: string;
+  keywords?: string;
+  alternates?: {
+    tr?: string;
+    en?: string;
+    "x-default"?: string;
+  };
+  xDefault?: string;
   includeFaq?: boolean;
   faqItems?: Array<{ question: string; answer: string }>;
 };
 
-const { title, description, path, includeFaq = false, faqItems } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  lang = "tr",
+  locale = lang === "en" ? "en_US" : site.locale,
+  keywords,
+  alternates,
+  xDefault,
+  includeFaq = false,
+  faqItems
+} = Astro.props;
 const canonical = new URL(path, site.domain).toString();
+const routeAlternates = findRouteAlternates(path);
+const alternatePaths = alternates ?? {
+  tr: routeAlternates?.tr,
+  en: routeAlternates?.en,
+  "x-default": xDefault ?? routeAlternates?.tr ?? "/"
+};
+const alternateLinks = Object.entries(alternatePaths)
+  .filter((entry): entry is [string, string] => Boolean(entry[1]))
+  .map(([hreflang, href]) => ({
+    hreflang,
+    href,
+    url: new URL(href, site.domain).toString()
+  }));
+const businessDescription =
+  lang === "en"
+    ? "Akyarlar Windsurf is a family-run windsurf school in Bodrum Akyarlar, offering private windsurf lessons, children lessons and equipment support in a beginner-friendly bay."
+    : site.description;
+const schemaAbout = lang === "en" ? "Windsurf lessons in Bodrum" : "Rüzgar sörfü eğitimi";
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonical} />
-    <meta property="og:locale" content={site.locale} />
+    {alternateLinks.map((link) => <link rel="alternate" hreflang={link.hreflang} href={link.url} />)}
+    <meta property="og:locale" content={locale} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
@@ -40,13 +81,21 @@ const canonical = new URL(path, site.domain).toString();
     <link rel="preload" as="image" href={site.heroImageAvif} type="image/avif" imagesizes="100vw" />
     <link rel="icon" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
-    <StructuredData pageTitle={title} pageDescription={description} pageUrl={canonical} includeFaq={includeFaq} faqItems={faqItems} />
+    <StructuredData
+      pageTitle={title}
+      pageDescription={description}
+      pageUrl={canonical}
+      includeFaq={includeFaq}
+      faqItems={faqItems}
+      businessDescription={businessDescription}
+      aboutName={schemaAbout}
+    />
   </head>
   <body>
-    <Header />
+    <Header lang={lang} alternates={alternatePaths} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

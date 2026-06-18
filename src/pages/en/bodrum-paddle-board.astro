@@ -1,0 +1,14 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.paddle;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.paddle}>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="Bodrum paddle board" title="SUP and paddle board in Akyarlar Bay" text="Akyarlar is especially good for paddle board in the morning, when the wind is lighter, the water is clearer and the bay feels calm." /><div class="actions"><a class="button" href={site.whatsapp}>Ask paddle conditions</a><a class="button ghost" href="/en/bodrum-akyarlar-wind-forecast/">Check wind</a></div></div></section>
+  <section class="section"><div class="container article-body"><article class="article-section"><h2>Why Akyarlar is good for Bodrum paddle board</h2><p><strong>Bodrum paddle board</strong> sessions need low wind and a calm sea surface. Akyarlar often offers this early in the morning, making it suitable for beginner SUP, sunrise routes and family water time.</p></article><article class="article-section"><h2>When wind increases</h2><p>As the Meltemi becomes stronger later in the day, the bay often becomes better for windsurfing than paddle board. This daily rhythm is one of Akyarlar's biggest advantages.</p></article></div></section>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="FAQ" title="Paddle board questions" /><div class="faq-grid">{enFaqSets.paddle.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div></div></section>
+</BaseLayout>

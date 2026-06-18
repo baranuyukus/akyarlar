@@ -12,9 +12,19 @@ type Props = {
   pageUrl: string;
   includeFaq?: boolean;
   faqItems?: FaqItem[];
+  businessDescription?: string;
+  aboutName?: string;
 };
 
-const { pageTitle, pageDescription, pageUrl, includeFaq = false, faqItems = faqs } = Astro.props;
+const {
+  pageTitle,
+  pageDescription,
+  pageUrl,
+  includeFaq = false,
+  faqItems = faqs,
+  businessDescription = site.description,
+  aboutName = "Rüzgar sörfü eğitimi"
+} = Astro.props;
 
 const localBusiness = {
   "@context": "https://schema.org",
@@ -26,7 +36,7 @@ const localBusiness = {
   telephone: site.phoneE164,
   email: site.email,
   priceRange: "$$",
-  description: site.description,
+  description: businessDescription,
   address: {
     "@type": "PostalAddress",
     streetAddress: "Barış Manço Caddesi, Akyarlar Otel Sokağı",
@@ -52,7 +62,7 @@ const webPage = {
   },
   about: {
     "@type": "Thing",
-    name: "Rüzgar sörfü eğitimi"
+    name: aboutName
   }
 };
 

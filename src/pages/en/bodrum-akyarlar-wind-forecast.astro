@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import WindguruWidget from "@components/WindguruWidget.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.wind;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.wind}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Bodrum Akyarlar wind forecast</p>
+        <h1>Bodrum Akyarlar wind forecast for windsurfing and paddle board</h1>
+        <p>
+          Check <strong>Bodrum Akyarlar wind forecast</strong>, <strong>Akyarlar Windguru</strong>
+          and Windy before planning a windsurf lesson or paddle board session. Akyarlar is usually
+          calm in the morning for SUP and stronger in the afternoon for Meltemi windsurfing.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Ask today's wind</a>
+          <a class="button ghost" href="/en/windsurf-lessons-bodrum/">Windsurf lessons</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WindguruWidget />
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Windy map" title="See Akyarlar wind on the map" text="Use Windy together with Windguru to compare wind direction, local flow and the bay's protected position." />
+      <div class="windy-panel">
+        <iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=36.919&lon=27.291&detailLat=36.968&detailLon=27.291&detail=true&message=true" frameborder="0" loading="lazy" title="Bodrum Akyarlar Windy wind forecast map"></iframe>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        <article class="card"><h3>Morning paddle</h3><p><strong>Bodrum paddle board</strong> is usually best early in the day when Akyarlar Bay is calmer and clearer.</p></article>
+        <article class="card"><h3>Afternoon windsurf</h3><p>The Meltemi often becomes more useful later in the day, creating better conditions for windsurf lessons and practice.</p></article>
+        <article class="card"><h3>Protected bay</h3><p>Akyarlar is protected from large open-sea waves, so wind can be used for learning without excessive chop.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Akyarlar wind forecast questions" />
+      <div class="faq-grid">
+        {enFaqSets.wind.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

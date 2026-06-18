@@ -1,0 +1,45 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.school;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.school}>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Bodrum windsurf school"
+        title="A family-run windsurf school in Akyarlar"
+        text="Akyarlar Windsurf is built around private teaching, children, families and real confidence on the water. The school uses Akyarlar's safe bay conditions to help beginners learn without unnecessary pressure."
+      />
+      <div class="grid">
+        <article class="card"><h3>Private instruction</h3><p>Lessons are not designed as crowded group sessions. Each student works at a suitable pace with direct guidance.</p></article>
+        <article class="card"><h3>Children-friendly</h3><p>Small sails, light equipment and a playful approach help children enjoy the sea and develop confidence.</p></article>
+        <article class="card"><h3>35+ years in Akyarlar</h3><p>The teaching culture comes from living with the same bay, wind and sea for decades.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Why choose Akyarlar for a Bodrum windsurf school?</h2>
+        <p>Akyarlar offers shallow water, a protected sea surface and regular wind. This combination is especially valuable for first lessons because students can repeat the basics without fighting heavy waves.</p>
+      </article>
+      <article class="article-section">
+        <h2>A school for windsurf learners, not just rentals</h2>
+        <p>The priority is to teach windsurfing properly. Rental and equipment support are planned only when the student can sail and return safely for the conditions of the day.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Bodrum windsurf school questions" />
+      <div class="faq-grid">
+        {enFaqSets.school.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

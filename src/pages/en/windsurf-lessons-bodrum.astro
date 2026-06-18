@@ -1,0 +1,72 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.lesson;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.lesson}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Windsurf lessons Bodrum</p>
+        <h1>Private beginner windsurf lessons in Bodrum Akyarlar</h1>
+        <p>
+          <strong>Windsurf lessons Bodrum</strong> should be safe, practical and based on real water
+          confidence. In Akyarlar, beginners learn in a wave-protected bay with shallow water,
+          regular Meltemi wind and private coaching focused on sailing out, turning and returning.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Ask lesson times</a>
+          <a class="button ghost" href="/en/bodrum-akyarlar-wind-forecast/">Check wind forecast</a>
+        </div>
+      </div>
+      <div class="process">
+        <article><h3>First control</h3><p>Balance, sail lifting, steering and short controlled runs inside the bay.</p></article>
+        <article><h3>Real turns</h3><p>Practice returning to the starting point instead of drifting away from shore.</p></article>
+        <article><h3>Boat support</h3><p>After the basics, longer free runs can be supported by the training boat.</p></article>
+        <article><h3>6-hour target</h3><p>The goal is safe beginner independence, not just standing on the board.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Why a 6-hour private windsurf course?</h2>
+        <p>
+          A single trial lesson is useful, but a structured 6-hour private windsurf course gives
+          beginners enough repetition to understand balance, sail power, direction changes and safe return.
+          Lessons are planned around your level, wind conditions and holiday schedule.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Can beginners really sail after the first lesson?</h2>
+        <p>
+          With suitable wind and the right equipment, many students can make controlled short runs
+          and return after the first lesson. The protected shape of Akyarlar Bay makes this first
+          experience calmer and more encouraging than open, choppy water.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Children and first-time adults</h2>
+        <p>
+          Children can usually start from around 5-6 years old when conditions are suitable.
+          Adults who are nervous in the sea also benefit from the shallow, clear and wave-protected
+          water. The lesson pace is personal, calm and confidence-focused.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Private windsurf lesson questions" />
+      <div class="faq-grid">
+        {enFaqSets.lesson.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,16 +1,46 @@
 ---
+import { enNavItems } from "@data/en";
 import { navItems, site } from "@data/site";
+
+type Props = {
+  lang?: "tr" | "en";
+};
+
+const { lang = "tr" } = Astro.props;
+const isEn = lang === "en";
+const footerNav = isEn ? enNavItems : navItems;
+const labels = isEn
+  ? {
+      address: "Akyarlar, Bodrum / Türkiye",
+      description:
+        "Private windsurf lessons, children lessons and equipment support in Bodrum Akyarlar with more than 35 years of family sea experience.",
+      directions: "Directions",
+      pages: "Pages",
+      contact: "Contact",
+      whatsapp: "Message on WhatsApp",
+      mapTitle: "Akyarlar Windsurf Google Maps location"
+    }
+  : {
+      address: site.shortAddress,
+      description:
+        "35 yılı aşkın aile deneyimiyle Bodrum Akyarlar'da rüzgar sörfü dersi, çocuk eğitimi ve ekipman desteği.",
+      directions: "Yol tarifi",
+      pages: "Sayfalar",
+      contact: "İletişim",
+      whatsapp: "WhatsApp ile yaz",
+      mapTitle: "Akyarlar Windsurf Google Harita konumu"
+    };
 ---
 
 <footer class="footer">
   <div class="footer-main">
     <div>
       <strong>Akyarlar Windsurf</strong>
-      <p>{site.shortAddress}</p>
-      <p>35 yılı aşkın aile deneyimiyle Bodrum Akyarlar'da rüzgar sörfü dersi, çocuk eğitimi ve ekipman desteği.</p>
+      <p>{labels.address}</p>
+      <p>{labels.description}</p>
       <div class="footer-actions">
         <a class="button whatsapp" href={site.whatsapp}>WhatsApp</a>
-        <a class="button ghost" href={site.mapUrl}>Yol tarifi</a>
+        <a class="button ghost" href={site.mapUrl}>{labels.directions}</a>
       </div>
     </div>
     <div class="footer-map">
@@ -22,22 +52,22 @@ import { navItems, site } from "@data/site";
         allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Akyarlar Windsurf Google Harita konumu"
+        title={labels.mapTitle}
       ></iframe>
     </div>
   </div>
   <div class="footer-links">
-    <strong>Sayfalar</strong>
-    <nav aria-label="Alt menü">
-      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    <strong>{labels.pages}</strong>
+    <nav aria-label={isEn ? "Footer menu" : "Alt menü"}>
+      {footerNav.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
   </div>
   <div class="footer-contact">
-    <strong>İletişim</strong>
+    <strong>{labels.contact}</strong>
     <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
-    <a href={site.whatsapp}>WhatsApp ile yaz</a>
+    <a href={site.whatsapp}>{labels.whatsapp}</a>
     <a href={`mailto:${site.email}`}>{site.email}</a>
-    <a href={site.mapUrl}>Yol tarifi al</a>
+    <a href={site.mapUrl}>{labels.directions}</a>
     <p>{site.address}</p>
   </div>
 </footer>

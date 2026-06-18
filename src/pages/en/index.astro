@@ -1,0 +1,107 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enGuideLinks, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.home;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.home}>
+  <section class="hero">
+    <OptimizedImage class="hero-media" src={site.heroImage} webp={site.heroImageWebp} avif={site.heroImageAvif} alt="Akyarlar Bay in Bodrum for beginner windsurf lessons" loading="eager" fetchpriority="high" width={1600} height={1063} sizes="100vw" />
+    <div class="hero-inner">
+      <p class="eyebrow">Bodrum windsurf school in Akyarlar</p>
+      <h1>Akyarlar Windsurf</h1>
+      <p class="lead">
+        Learn windsurfing in Bodrum in a wave-protected, beginner-friendly bay with private lessons,
+        regular Meltemi wind and a family-run school with more than 35 years of local sea experience.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href={site.whatsapp}>Ask on WhatsApp</a>
+        <a class="button secondary" href="/en/windsurf-lessons-bodrum/">View lessons</a>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Akyarlar Windsurf highlights">
+      <div><strong>35+ years</strong><span>Family sea experience in the same bay</span></div>
+      <div><strong>Akyarlar</strong><span>Shallow, clear and wave-protected water</span></div>
+      <div><strong>6 hours</strong><span>Private course toward independent sailing</span></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Why Akyarlar Windsurf?"
+        title="A safe Bodrum windsurf school for real beginners"
+        text="Akyarlar is not just a beautiful bay. Its protected water, regular wind and family-friendly beach make it one of the most practical places to learn windsurfing in Bodrum."
+      />
+      <div class="grid">
+        <article class="card">
+          <h3>Private windsurf lessons</h3>
+          <p>Lessons are planned around your level, confidence, age and holiday schedule. The focus is personal progress, not crowded group timing.</p>
+          <a href="/en/windsurf-lessons-bodrum/">Private lesson course</a>
+        </article>
+        <article class="card">
+          <h3>Beginner-friendly bay</h3>
+          <p>Akyarlar is physically protected from large open-sea waves, so new students can work on balance, sail control and turns in calmer water.</p>
+          <a href="/en/akyarlar-windsurf-spot/">Akyarlar windsurf spot</a>
+        </article>
+        <article class="card">
+          <h3>Children and families</h3>
+          <p>When conditions are suitable, children can start around 5-6 years old with small equipment, light sails and a calm teaching style.</p>
+          <a href="/en/bodrum-windsurf-school/">Family school</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Learning flow</p>
+        <h2>From first balance to safe return</h2>
+        <p>
+          The main goal is not to keep you on the beach with theory. From the first lesson,
+          you work on balance, sail handling, steering and controlled return in real water conditions.
+        </p>
+        <ul class="check-list">
+          <li>Correct board and sail selection for your size and wind level.</li>
+          <li>Safe practice inside a wave-protected bay.</li>
+          <li>Boat-supported longer runs after the basics when conditions allow.</li>
+          <li>A realistic 6-hour private course for usable beginner skills.</li>
+        </ul>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Akyarlar clear water and family-friendly beach in Bodrum" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Continue exploring" title="Plan your windsurf day in Akyarlar" />
+      <div class="grid">
+        {enGuideLinks.map((guide) => (
+          <article class="card">
+            <h3>{guide.title}</h3>
+            <p>{guide.text}</p>
+            <a href={guide.href}>Read more</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Before your first windsurf lesson in Bodrum" />
+      <div class="faq-grid">
+        {enFaqSets.home.map((faq) => (
+          <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,6 +1,9 @@
+import { enPageMeta } from "@data/en";
 import { pageMeta, site } from "@data/site";
 
-const paths = Array.from(new Set(Object.values(pageMeta).map((meta) => meta.path))).sort();
+const paths = Array.from(
+  new Set([...Object.values(pageMeta), ...Object.values(enPageMeta)].map((meta) => meta.path))
+).sort();
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

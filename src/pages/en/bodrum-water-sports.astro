@@ -1,0 +1,13 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.waterSports;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.waterSports}>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="Bodrum water sports" title="Windsurf, paddle board and wing foil in Akyarlar" text="Akyarlar brings together clear water, a wave-protected bay and regular wind, making it one of the most practical Bodrum water sports locations for learners." /><div class="grid"><article class="card"><h3>Windsurf</h3><p>Private lessons, beginner progression and regular afternoon wind.</p><a href="/en/windsurf-lessons-bodrum/">Lessons</a></article><article class="card"><h3>Paddle board</h3><p>Calm morning sea for SUP, families and sunrise sessions.</p><a href="/en/bodrum-paddle-board/">Paddle guide</a></article><article class="card"><h3>Wing foil and beyond</h3><p>On suitable wind days, experienced riders can use the open wind corridor.</p></article></div></div></section>
+  <section class="section"><div class="container article-body"><article class="article-section"><h2>Why Akyarlar works for different water sports</h2><p>Morning calm water and afternoon Meltemi wind allow different activities in the same bay. Beginners can start with windsurf or SUP, while experienced riders can watch for stronger wind windows.</p></article></div></section>
+  <section class="section alt"><div class="container"><SectionHeading eyebrow="FAQ" title="Bodrum water sports questions" /><div class="faq-grid">{enFaqSets.waterSports.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div></div></section>
+</BaseLayout>

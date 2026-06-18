@@ -1,0 +1,36 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enGuideLinks, enPageMeta } from "@data/en";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.akyarlar;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.akyarlar}>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Akyarlar windsurf spot"
+        title="Akyarlar: a beginner-friendly windsurf spot in Bodrum"
+        text="Akyarlar is one of the most useful windsurf spots in Bodrum because it combines a wave-protected bay, shallow areas, clear water and regular Meltemi wind."
+      />
+      <div class="grid">
+        <article class="card"><h3>Protected water</h3><p>The bay cuts much of the open-sea wave energy, helping beginners focus on sail control and direction.</p></article>
+        <article class="card"><h3>Regular wind</h3><p>Summer Meltemi often creates a practical afternoon rhythm for windsurf lessons and progression.</p></article>
+        <article class="card"><h3>Room to progress</h3><p>The same bay can support first lessons, longer runs, harness work and more advanced turns on suitable days.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Why is Akyarlar one of the best bays for windsurfing in Bodrum?</h2><p>The learning environment matters as much as the wind. Akyarlar gives beginners a calmer sea surface, visible return points and a family-friendly beach while still receiving useful wind for real windsurf practice.</p></article>
+      <article class="article-section"><h2>Beginner and advanced use in the same bay</h2><p>New students can work in controlled areas while more experienced windsurfers can use stronger wind windows for speed control, harness work and longer runs.</p></article>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Related guides" title="Plan your Akyarlar windsurf day" />
+      <div class="grid">{enGuideLinks.map((guide) => <article class="card"><h3>{guide.title}</h3><p>{guide.text}</p><a href={guide.href}>Read more</a></article>)}</div>
+    </div>
+  </section>
+</BaseLayout>

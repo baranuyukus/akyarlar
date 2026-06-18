@@ -1,0 +1,22 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { enFaqSets, enPageMeta } from "@data/en";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = enPageMeta.faq;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="en" keywords={meta.keywords} includeFaq faqItems={enFaqSets.faq}>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Akyarlar FAQ" title="How far is Akyarlar from Bodrum and what is the bay like?" text="Quick answers for visitors planning windsurf lessons, paddle board sessions or a beach day in Akyarlar." />
+      <div class="grid">
+        <article class="card"><h3>23-24 km from Bodrum</h3><p>Akyarlar is about 23-24 km from Bodrum center by the D330 road.</p></article>
+        <article class="card"><h3>Clear, protected sea</h3><p>The bay is known for clear water and a more controlled sea surface than many open areas.</p></article>
+        <article class="card"><h3>Good for windsurfing</h3><p>Regular afternoon wind and protected water make Akyarlar strong for beginner windsurf lessons.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section"><div class="container"><SectionHeading eyebrow="FAQ" title="Akyarlar questions in English" /><div class="faq-grid">{enFaqSets.faq.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div><div class="actions"><a class="button" href={site.whatsapp}>Ask us on WhatsApp</a><a class="button ghost" href="/en/contact/">Contact page</a></div></div></section>
+</BaseLayout>
