@@ -1,0 +1,33 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.akyarlarwindsurf.com/",
+      "service-desc": [
+        {
+          "href": "https://www.akyarlarwindsurf.com/.well-known/openapi.json",
+          "type": "application/openapi+json",
+          "title": "Akyarlar Windsurf public discovery OpenAPI description"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.akyarlarwindsurf.com/llms-full.txt",
+          "type": "text/markdown",
+          "title": "Akyarlar Windsurf full AI context"
+        },
+        {
+          "href": "https://www.akyarlarwindsurf.com/auth.md",
+          "type": "text/markdown",
+          "title": "Agent access and authentication notes"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://www.akyarlarwindsurf.com/.well-known/status.json",
+          "type": "application/json",
+          "title": "Public site status"
+        }
+      ]
+    }
+  ]
+}

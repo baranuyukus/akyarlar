@@ -1,0 +1,34 @@
+{
+  "serverInfo": {
+    "name": "Akyarlar Windsurf Public Discovery",
+    "version": "1.0.0"
+  },
+  "description": "Akyarlar Windsurf exposes public static discovery resources for AI agents. It does not currently provide an interactive MCP transport endpoint.",
+  "homepage": "https://www.akyarlarwindsurf.com/",
+  "transport": {
+    "type": "none",
+    "endpoint": null
+  },
+  "capabilities": {
+    "tools": false,
+    "resources": true,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "name": "llms.txt",
+      "uri": "https://www.akyarlarwindsurf.com/llms.txt",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "llms-full.txt",
+      "uri": "https://www.akyarlarwindsurf.com/llms-full.txt",
+      "mimeType": "text/markdown"
+    },
+    {
+      "name": "sitemap.xml",
+      "uri": "https://www.akyarlarwindsurf.com/sitemap.xml",
+      "mimeType": "application/xml"
+    }
+  ]
+}

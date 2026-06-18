@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agentskills.io/schemas/agent-skills-index-v0.2.json",
+  "name": "Akyarlar Windsurf Agent Skills",
+  "description": "Public agent skills for discovering Akyarlar Windsurf business information, windsurf lessons, wind forecast pages and multilingual content.",
+  "skills": [
+    {
+      "name": "business-info",
+      "type": "documentation",
+      "description": "Public business contact, location and access information for Akyarlar Windsurf.",
+      "url": "https://www.akyarlarwindsurf.com/.well-known/agent-skills/business-info.md",
+      "sha256": "d89c9cc2e77dc0ba657dd3ac102b45e5b92522d2890c3865c230e83f9e613be6"
+    },
+    {
+      "name": "windsurf-lessons",
+      "type": "documentation",
+      "description": "How to answer questions about private windsurf lessons, children lessons and the 6-hour course.",
+      "url": "https://www.akyarlarwindsurf.com/.well-known/agent-skills/windsurf-lessons.md",
+      "sha256": "a39662d5faa2c61a1c92f7961ef61bad1e9ba1c15b395cf2f2f16980810406d2"
+    },
+    {
+      "name": "wind-forecast",
+      "type": "documentation",
+      "description": "How to answer questions about Akyarlar wind forecast, Windguru, Windy, SUP and windsurf timing.",
+      "url": "https://www.akyarlarwindsurf.com/.well-known/agent-skills/wind-forecast.md",
+      "sha256": "c3784b1bc1cdcb948cf7df6cb4984012c2eebb1b8bc7d457b571dab6ee3f3ea4"
+    },
+    {
+      "name": "multilingual-pages",
+      "type": "documentation",
+      "description": "Language-specific page selection for Turkish, English, German and Russian users.",
+      "url": "https://www.akyarlarwindsurf.com/.well-known/agent-skills/multilingual-pages.md",
+      "sha256": "121ed71da14fb905ea786e52b663e1177daf1f4a31db74ed19eb399522b9f0a9"
+    }
+  ]
+}

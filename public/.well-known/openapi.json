@@ -1,0 +1,105 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Akyarlar Windsurf Public Discovery API",
+    "version": "1.0.0",
+    "description": "Read-only public discovery endpoints for Akyarlar Windsurf. The site does not require authentication for public content."
+  },
+  "servers": [
+    {
+      "url": "https://www.akyarlarwindsurf.com"
+    }
+  ],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "summary": "Short AI context file",
+        "operationId": "getLlmsContext",
+        "responses": {
+          "200": {
+            "description": "Markdown context for AI agents",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "summary": "Full AI context file",
+        "operationId": "getFullLlmsContext",
+        "responses": {
+          "200": {
+            "description": "Extended Markdown context for AI agents",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "XML sitemap",
+        "operationId": "getSitemap",
+        "responses": {
+          "200": {
+            "description": "XML sitemap with canonical public URLs",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots.txt": {
+      "get": {
+        "summary": "Robots policy",
+        "operationId": "getRobots",
+        "responses": {
+          "200": {
+            "description": "Robots policy allowing search engines and AI crawlers",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/status.json": {
+      "get": {
+        "summary": "Public site status",
+        "operationId": "getStatus",
+        "responses": {
+          "200": {
+            "description": "Public discovery status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

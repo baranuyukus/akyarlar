@@ -113,5 +113,111 @@ const schemaAbout =
       <slot />
     </main>
     <Footer lang={lang} />
+    <script is:inline>
+      (() => {
+        const modelContext = navigator.modelContext;
+        if (!modelContext || typeof modelContext.provideContext !== "function") return;
+
+        const site = {
+          name: "Akyarlar Windsurf",
+          phone: "+90 535 499 62 09",
+          email: "uyukusb@gmail.com",
+          location: "Akyarlar, Turgutreis, Bodrum, Muğla, Türkiye",
+          whatsapp: "https://wa.me/905354996209",
+          contact: "https://www.akyarlarwindsurf.com/iletisim/",
+          wind: "https://www.akyarlarwindsurf.com/bodrum-akyarlar-ruzgar-durumu/",
+          lessons: "https://www.akyarlarwindsurf.com/ruzgar-sorfu-dersi/"
+        };
+
+        modelContext.provideContext({
+          name: "Akyarlar Windsurf",
+          description:
+            "Public tools for Akyarlar Windsurf, a family-run windsurf school in Bodrum Akyarlar.",
+          tools: [
+            {
+              name: "get_business_details",
+              description: "Get public contact, location and service summary for Akyarlar Windsurf.",
+              inputSchema: {
+                type: "object",
+                properties: {},
+                additionalProperties: false
+              },
+              execute: async () => ({
+                name: site.name,
+                phone: site.phone,
+                email: site.email,
+                location: site.location,
+                whatsapp: site.whatsapp,
+                contactPage: site.contact,
+                services: [
+                  "Özel rüzgar sörfü dersi",
+                  "6 saatlik başlangıç paketi",
+                  "Çocuklar için rüzgar sörfü eğitimi",
+                  "Windsurf ekipman desteği",
+                  "SUP ve paddle bilgilendirmesi"
+                ]
+              })
+            },
+            {
+              name: "get_windsurf_lesson_info",
+              description: "Get key facts about private windsurf lessons and the 6-hour course.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  language: {
+                    type: "string",
+                    enum: ["tr", "en", "de", "ru"],
+                    description: "Preferred language for page links."
+                  }
+                },
+                additionalProperties: false
+              },
+              execute: async ({ language = "tr" } = {}) => {
+                const links = {
+                  tr: "https://www.akyarlarwindsurf.com/ruzgar-sorfu-dersi/",
+                  en: "https://www.akyarlarwindsurf.com/en/windsurf-lessons-bodrum/",
+                  de: "https://www.akyarlarwindsurf.com/de/windsurfkurs-bodrum/",
+                  ru: "https://www.akyarlarwindsurf.com/ru/uroki-vindsorfinga-bodrum/"
+                };
+                return {
+                  summary:
+                    "Akyarlar Windsurf öncelikli olarak özel ders verir. 6 saatlik paket denge, yelken kontrolü, yön verme, dönüş, rüzgar okuma ve güvenli gidip dönme becerilerini hedefler.",
+                  childrenCanStartAroundAge: "5-6",
+                  beginnerFriendly: true,
+                  page: links[language] || links.tr
+                };
+              }
+            },
+            {
+              name: "get_wind_forecast_links",
+              description: "Get Windguru/Windy forecast pages for Akyarlar wind and SUP planning.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  language: {
+                    type: "string",
+                    enum: ["tr", "en", "de", "ru"]
+                  }
+                },
+                additionalProperties: false
+              },
+              execute: async ({ language = "tr" } = {}) => {
+                const links = {
+                  tr: "https://www.akyarlarwindsurf.com/bodrum-akyarlar-ruzgar-durumu/",
+                  en: "https://www.akyarlarwindsurf.com/en/bodrum-akyarlar-wind-forecast/",
+                  de: "https://www.akyarlarwindsurf.com/de/bodrum-akyarlar-windvorhersage/",
+                  ru: "https://www.akyarlarwindsurf.com/ru/prognoz-vetra-bodrum-akyarlar/"
+                };
+                return {
+                  page: links[language] || links.tr,
+                  morning: "SUP ve paddle için genellikle daha sakin saatler.",
+                  afternoon: "Meltem rüzgarı windsurf dersi ve pratik için genellikle daha verimli olur."
+                };
+              }
+            }
+          ]
+        });
+      })();
+    </script>
   </body>
 </html>

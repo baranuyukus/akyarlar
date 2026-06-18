@@ -1,0 +1,14 @@
+{
+  "issuer": "https://www.akyarlarwindsurf.com/",
+  "service_documentation": "https://www.akyarlarwindsurf.com/auth.md",
+  "grant_types_supported": [],
+  "response_types_supported": [],
+  "scopes_supported": [],
+  "agent_auth": {
+    "registration_required": false,
+    "register_uri": null,
+    "supported_identity_types": [],
+    "supported_credential_types": [],
+    "notes": "Akyarlar Windsurf does not currently expose protected APIs. Public content is available without authentication."
+  }
+}
