@@ -1,0 +1,51 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.guide;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Бухта Акьярлар</p>
+        <h1>Гид по бухте Акьярлар для виндсерфинга, SUP и семей</h1>
+        <p>
+          <strong>Бухта Акьярлар</strong> находится на юго-западе полуострова Бодрум.
+          Она известна прозрачной водой, спокойным утром и ветром, который делает
+          <strong>виндсерфинг Акьярлар</strong> особенно удобным.
+        </p>
+        <div class="actions">
+          <a class="button" href="/ru/prognoz-vetra-bodrum-akyarlar/">Смотреть ветер</a>
+          <a class="button ghost" href="/ru/kontakty/">Контакты</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Бухта Акьярлар Бодрум с прозрачной бирюзовой водой" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Почему Акьярлар удобен для семей</h2><p>На пляже есть кафе, рестораны и места для отдыха. Семья может комфортно ждать, пока проходит урок виндсерфинга или SUP.</p></article>
+      <article class="article-section"><h2>Море, ветер и ритм дня</h2><p>Утром бухта часто спокойнее и подходит для <strong>SUP Бодрум</strong>. После обеда мелтем усиливается и условия становятся лучше для виндсерфинга.</p></article>
+      <article class="article-section"><h2>Как добраться до Акьярлара</h2><p>Акьярлар находится примерно в 23-24 км от центра Бодрума. На машине удобно ехать по D330, также есть автобусы из Бодрума и в сторону Тургутрейса.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Дальше" title="Практично спланировать Акьярлар" />
+      <div class="grid">
+        <article class="card"><h3>Прогноз ветра</h3><p>Сравнить Windguru и Windy для Акьярлара.</p><a href="/ru/prognoz-vetra-bodrum-akyarlar/">Открыть ветер</a></article>
+        <article class="card"><h3>FAQ</h3><p>Расстояние, дорога, море и семейные вопросы.</p><a href="/ru/akyarlar-faq/">Akyarlar FAQ</a></article>
+        <article class="card"><h3>Уроки</h3><p>Индивидуальный курс для новичков и детей.</p><a href="/ru/uroki-vindsorfinga-bodrum/">Смотреть уроки</a></article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

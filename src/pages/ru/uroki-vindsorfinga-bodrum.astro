@@ -1,0 +1,51 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.lesson;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.lesson}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Уроки виндсерфинга Бодрум</p>
+        <h1>Индивидуальные уроки виндсерфинга в Бодруме Акьярлар</h1>
+        <p>
+          <strong>Уроки виндсерфинга Бодрум</strong> должны быть безопасными, практичными и давать
+          реальную уверенность на воде. В Акьярларе новички учатся в защищенной бухте с мелкой водой,
+          регулярным ветром мелтем и индивидуальной поддержкой.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить время урока</a>
+          <a class="button ghost" href="/ru/prognoz-vetra-bodrum-akyarlar/">Проверить ветер</a>
+        </div>
+      </div>
+      <div class="process">
+        <article><h3>Первый контроль</h3><p>Баланс, подъем паруса, направление и короткие проходы внутри бухты.</p></article>
+        <article><h3>Повороты</h3><p>Учимся возвращаться к старту, а не просто уходить от берега.</p></article>
+        <article><h3>Поддержка лодки</h3><p>После базы возможны более длинные свободные проходы с сопровождением.</p></article>
+        <article><h3>Цель 6 часов</h3><p>Задача - уверенный новичок, который может ехать и возвращаться.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Почему 6-часовой индивидуальный курс?</h2><p>Один пробный урок полезен, но 6 часов дают повторение для баланса, силы паруса, поворотов и безопасного возвращения. <strong>Индивидуальный урок виндсерфинга Бодрум</strong> подстраивается под ветер, уровень и отдых.</p></article>
+      <article class="article-section"><h2>Можно ли ехать уже после первого урока?</h2><p>При подходящем ветре многие ученики делают короткие контролируемые проходы и возвращаются уже после первого занятия. Защищенная бухта Акьярлар делает этот старт спокойнее.</p></article>
+      <article class="article-section"><h2>Дети и взрослые новички</h2><p>Дети обычно могут начинать примерно с 5-6 лет при подходящих условиях. Взрослые, которые осторожничают в море, получают преимущество от мелкой и чистой воды.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы об индивидуальных уроках" />
+      <div class="faq-grid">
+        {ruFaqSets.lesson.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

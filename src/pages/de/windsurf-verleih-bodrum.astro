@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.rental;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.rental}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Windsurf Verleih Bodrum</p>
+        <h1>Windsurf Ausruestung in Akyarlar sicher nutzen</h1>
+        <p>
+          <strong>Windsurf Verleih Bodrum</strong> funktioniert nur dann gut, wenn Material,
+          Wind und Koennen zusammenpassen. Deshalb planen wir Ausruestung nach Niveau,
+          Rueckkehrsicherheit und Tagesbedingungen.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Material anfragen</a>
+          <a class="button ghost" href="/de/bodrum-akyarlar-windvorhersage/">Windvorhersage</a>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Niveau zuerst</h3><p>Einsteiger werden zuerst zum Unterricht gefuehrt, damit sie sicher fahren und zurueckkommen koennen.</p></article>
+        <article class="card"><h3>Passende Segelgroesse</h3><p>Segel und Board werden nach Wind, Gewicht, Erfahrung und Tagesziel ausgewaehlt.</p></article>
+        <article class="card"><h3>Sicherheit in der Bucht</h3><p>Akyarlar bietet eine kontrollierbare Flaeche, trotzdem entscheidet immer die reale Windlage.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Warum Unterricht vor dem Verleih sinnvoll ist</h2>
+        <p>
+          Wer <strong>Akyarlar Windsurf Ausruestung</strong> nutzen moechte, sollte die Grundlagen
+          sicher beherrschen: Starten, Lenken, Wenden und zurueckfahren. Das schuetzt dich,
+          andere Wassersportler und das Material.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zum Windsurf Verleih" />
+      <div class="faq-grid">
+        {deFaqSets.rental.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

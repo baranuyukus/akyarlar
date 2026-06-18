@@ -1,0 +1,51 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.guide;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Akyarlar Bucht</p>
+        <h1>Akyarlar Bucht Guide fuer Windsurfen, SUP und Familien</h1>
+        <p>
+          Die <strong>Akyarlar Bucht</strong> liegt im Suedwesten der Halbinsel Bodrum.
+          Sie ist bekannt fuer klares, kuehles Wasser, ruhige Morgenstunden und den
+          regelmaessigen Wind, der sie fuer <strong>Windsurfen in Bodrum</strong> so interessant macht.
+        </p>
+        <div class="actions">
+          <a class="button" href="/de/bodrum-akyarlar-windvorhersage/">Wind ansehen</a>
+          <a class="button ghost" href="/de/kontakt/">Kontakt</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Akyarlar Bucht Bodrum mit klarem tuerkisfarbenem Wasser" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Warum Akyarlar fuer Familien angenehm ist</h2><p>Der Strand ist gut erreichbar, es gibt Restaurants, Cafes und Sitzbereiche. Kinder koennen am Tag am Strand bleiben, waehrend Windsurfkurse oder SUP-Einheiten geplant werden.</p></article>
+      <article class="article-section"><h2>Meer, Wind und Tagesrhythmus</h2><p>Morgens ist die Bucht oft ruhiger und ideal fuer <strong>SUP Bodrum</strong>. Nachmittags wird der Meltemi staerker und schafft bessere Bedingungen fuer Windsurfen.</p></article>
+      <article class="article-section"><h2>Anreise nach Akyarlar</h2><p>Akyarlar liegt etwa 23-24 km vom Zentrum Bodrum entfernt. Mit dem Auto geht es ueber die D330, ausserdem fahren Busse aus Bodrum und Richtung Turgutreis.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Weiterlesen" title="Akyarlar praktisch planen" />
+      <div class="grid">
+        <article class="card"><h3>Windvorhersage</h3><p>Windguru und Windy fuer Akyarlar vergleichen.</p><a href="/de/bodrum-akyarlar-windvorhersage/">Windseite oeffnen</a></article>
+        <article class="card"><h3>FAQ</h3><p>Entfernung, Anreise, Meer und Familienfragen.</p><a href="/de/akyarlar-faq/">Akyarlar FAQ</a></article>
+        <article class="card"><h3>Windsurfkurs</h3><p>Privater Kurs fuer Einsteiger und Kinder.</p><a href="/de/windsurfkurs-bodrum/">Kurse ansehen</a></article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

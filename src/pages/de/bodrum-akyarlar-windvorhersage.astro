@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import WindguruWidget from "@components/WindguruWidget.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.wind;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.wind}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Bodrum Akyarlar Windvorhersage</p>
+        <h1>Bodrum Akyarlar Windvorhersage fuer Windsurfen und SUP</h1>
+        <p>
+          Pruefe <strong>Bodrum Akyarlar Windvorhersage</strong>, <strong>Akyarlar Windguru</strong>
+          und Windy, bevor du einen Windsurfkurs oder eine SUP-Session planst. Akyarlar ist morgens
+          oft ruhig fuer <strong>SUP Bodrum</strong> und nachmittags besser fuer Meltemi-Windsurfen.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Heutigen Wind fragen</a>
+          <a class="button ghost" href="/de/windsurfkurs-bodrum/">Windsurfkurs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WindguruWidget />
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Windy Karte" title="Akyarlar Wind auf der Karte ansehen" text="Nutze Windy zusammen mit Windguru, um Windrichtung, lokale Stroemung und die geschuetzte Lage der Bucht zu vergleichen." />
+      <div class="windy-panel">
+        <iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=36.919&lon=27.291&detailLat=36.968&detailLon=27.291&detail=true&message=true" frameborder="0" loading="lazy" title="Bodrum Akyarlar Windy Windvorhersage Karte"></iframe>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        <article class="card"><h3>Morgens SUP</h3><p><strong>Stand Up Paddling Bodrum</strong> ist meist frueh am Tag am besten, wenn die Akyarlar Bucht ruhiger und klarer ist.</p></article>
+        <article class="card"><h3>Nachmittags Windsurfen</h3><p>Der Meltemi wird oft spaeter am Tag nutzbarer und schafft bessere Bedingungen fuer Windsurfkurse und freies Ueben.</p></article>
+        <article class="card"><h3>Geschuetzte Bucht</h3><p>Akyarlar faengt grosse offene Meereswellen ab, sodass Wind zum Lernen genutzt werden kann, ohne zu viel Kabbelwasser.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zur Akyarlar Windvorhersage" />
+      <div class="faq-grid">
+        {deFaqSets.wind.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -10,12 +10,14 @@ type Props = {
   title: string;
   description: string;
   path: string;
-  lang?: "tr" | "en";
+  lang?: "tr" | "en" | "de" | "ru";
   locale?: string;
   keywords?: string;
   alternates?: {
     tr?: string;
     en?: string;
+    de?: string;
+    ru?: string;
     "x-default"?: string;
   };
   xDefault?: string;
@@ -28,7 +30,7 @@ const {
   description,
   path,
   lang = "tr",
-  locale = lang === "en" ? "en_US" : site.locale,
+  locale = lang === "en" ? "en_US" : lang === "de" ? "de_DE" : lang === "ru" ? "ru_RU" : site.locale,
   keywords,
   alternates,
   xDefault,
@@ -40,6 +42,8 @@ const routeAlternates = findRouteAlternates(path);
 const alternatePaths = alternates ?? {
   tr: routeAlternates?.tr,
   en: routeAlternates?.en,
+  de: routeAlternates?.de,
+  ru: routeAlternates?.ru,
   "x-default": xDefault ?? routeAlternates?.tr ?? "/"
 };
 const alternateLinks = Object.entries(alternatePaths)
@@ -52,8 +56,19 @@ const alternateLinks = Object.entries(alternatePaths)
 const businessDescription =
   lang === "en"
     ? "Akyarlar Windsurf is a family-run windsurf school in Bodrum Akyarlar, offering private windsurf lessons, children lessons and equipment support in a beginner-friendly bay."
+    : lang === "de"
+      ? "Akyarlar Windsurf ist eine familiengefuehrte Windsurfschule in Bodrum Akyarlar mit privaten Windsurfkursen, Kinderkursen und Ausruestungsunterstuetzung in einer anfaengerfreundlichen Bucht."
+    : lang === "ru"
+      ? "Akyarlar Windsurf - семейная школа виндсерфинга в Бодруме Акьярлар с индивидуальными уроками, детскими занятиями и поддержкой оборудования в безопасной бухте для начинающих."
     : site.description;
-const schemaAbout = lang === "en" ? "Windsurf lessons in Bodrum" : "Rüzgar sörfü eğitimi";
+const schemaAbout =
+  lang === "en"
+    ? "Windsurf lessons in Bodrum"
+    : lang === "de"
+      ? "Windsurfkurse in Bodrum"
+      : lang === "ru"
+        ? "Уроки виндсерфинга в Бодруме"
+        : "Rüzgar sörfü eğitimi";
 ---
 
 <!doctype html>

@@ -1,0 +1,48 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.waterSports;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.waterSports}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Водные виды спорта Бодрум</p>
+        <h1>Водный спорт в Бодруме Акьярлар: виндсерфинг, SUP и Wing Foil</h1>
+        <p>
+          <strong>Водные виды спорта Бодрум</strong> в Акьярларе - это не только пляж.
+          Бухта объединяет чистое море, контролируемый ветер и семейную инфраструктуру для
+          <strong>виндсерфинга Бодрум</strong>, SUP, wing foil, каяка и плавания.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить активность</a>
+          <a class="button ghost" href="/ru/akyarlar-vindsorfing-spot/">Akyarlar spot</a>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Виндсерфинг</h3><p>Индивидуальные уроки, 6-часовой курс и безопасная зона для практики в защищенной бухте.</p></article>
+        <article class="card"><h3>SUP</h3><p>Утром более спокойная вода для paddle board, семейного SUP и легких маршрутов.</p></article>
+        <article class="card"><h3>Wing Foil и другое</h3><p>В подходящие дни возможны wing foil, каяк, плавание и другие активности.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Почему Акьярлар силен для водного спорта</h2><p>Многие бухты Бодрума красивы, но не каждая дает контролируемый ветер и защищенную воду одновременно. Именно эта комбинация делает Акьярлар ценным для <strong>виндсерфинга в Бодруме</strong> и <strong>SUP Бодрум</strong>.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы о водном спорте в Бодруме Акьярлар" />
+      <div class="faq-grid">
+        {ruFaqSets.waterSports.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

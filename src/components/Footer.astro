@@ -1,14 +1,18 @@
 ---
+import { deNavItems } from "@data/de";
 import { enNavItems } from "@data/en";
+import { ruNavItems } from "@data/ru";
 import { navItems, site } from "@data/site";
 
 type Props = {
-  lang?: "tr" | "en";
+  lang?: "tr" | "en" | "de" | "ru";
 };
 
 const { lang = "tr" } = Astro.props;
 const isEn = lang === "en";
-const footerNav = isEn ? enNavItems : navItems;
+const isDe = lang === "de";
+const isRu = lang === "ru";
+const footerNav = isEn ? enNavItems : isDe ? deNavItems : isRu ? ruNavItems : navItems;
 const labels = isEn
   ? {
       address: "Akyarlar, Bodrum / Türkiye",
@@ -20,6 +24,28 @@ const labels = isEn
       whatsapp: "Message on WhatsApp",
       mapTitle: "Akyarlar Windsurf Google Maps location"
     }
+  : isDe
+    ? {
+        address: "Akyarlar, Bodrum / Tuerkei",
+        description:
+          "Private Windsurfkurse, Kinderkurse und Ausruestungsunterstuetzung in Bodrum Akyarlar mit mehr als 35 Jahren Erfahrung am Meer.",
+        directions: "Route",
+        pages: "Seiten",
+        contact: "Kontakt",
+        whatsapp: "Per WhatsApp schreiben",
+        mapTitle: "Akyarlar Windsurf Standort auf Google Maps"
+      }
+  : isRu
+    ? {
+        address: "Akyarlar, Bodrum / Турция",
+        description:
+          "Индивидуальные уроки виндсерфинга, детские занятия и поддержка оборудования в Бодруме Акьярлар с более чем 35-летним семейным опытом у моря.",
+        directions: "Маршрут",
+        pages: "Страницы",
+        contact: "Контакты",
+        whatsapp: "Написать в WhatsApp",
+        mapTitle: "Akyarlar Windsurf на Google Maps"
+      }
   : {
       address: site.shortAddress,
       description:
@@ -58,7 +84,7 @@ const labels = isEn
   </div>
   <div class="footer-links">
     <strong>{labels.pages}</strong>
-    <nav aria-label={isEn ? "Footer menu" : "Alt menü"}>
+    <nav aria-label={isEn ? "Footer menu" : isDe ? "Footer Menue" : isRu ? "Меню в футере" : "Alt menü"}>
       {footerNav.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
   </div>

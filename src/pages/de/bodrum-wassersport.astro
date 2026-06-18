@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.waterSports;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.waterSports}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Wassersport Bodrum</p>
+        <h1>Wassersport in Bodrum Akyarlar: Windsurfen, SUP und Wing Foil</h1>
+        <p>
+          <strong>Wassersport Bodrum</strong> bedeutet in Akyarlar nicht nur Strandurlaub.
+          Die Bucht verbindet klares Wasser, kontrollierten Wind und familienfreundliche Infrastruktur
+          fuer <strong>Windsurfen Bodrum</strong>, SUP, Wing Foil, Kajak und Schwimmen.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Aktivitaet fragen</a>
+          <a class="button ghost" href="/de/akyarlar-windsurf-spot/">Akyarlar Spot</a>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Windsurfen</h3><p>Privater Unterricht, 6-Stunden-Kurs und sichere Uebungsflaeche in der geschuetzten Bucht.</p></article>
+        <article class="card"><h3>Stand Up Paddling</h3><p>Morgens ruhigeres Wasser fuer SUP, Familienpaddeln und entspannte Routen in Akyarlar.</p></article>
+        <article class="card"><h3>Wing Foil und mehr</h3><p>Bei passenden Bedingungen sind auch Wing Foil, Kajak und Schwimmen gut moeglich.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Warum Akyarlar fuer Wassersport stark ist</h2>
+        <p>
+          Viele Buchten in Bodrum sind schoen, aber nicht jede bietet kontrollierten Wind und
+          wellengeschuetztes Wasser zusammen. Genau diese Kombination macht Akyarlar fuer
+          <strong>Windsurfen in Bodrum</strong> und <strong>SUP Bodrum</strong> so wertvoll.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zu Wassersport in Bodrum Akyarlar" />
+      <div class="faq-grid">
+        {deFaqSets.waterSports.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

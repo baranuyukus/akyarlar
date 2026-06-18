@@ -1,0 +1,63 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.faq;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.faq}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Akyarlar FAQ</p>
+        <h1>Akyarlar FAQ: Entfernung, Anreise, Meer und Wind</h1>
+        <p>
+          Diese Seite beantwortet die wichtigsten Fragen zu <strong>Akyarlar Bodrum</strong>:
+          Wie weit ist Akyarlar vom Zentrum Bodrum entfernt, wie kommt man hin, wie ist das Meer
+          und warum ist die Bucht fuer Windsurfen und SUP so gut geeignet?
+        </p>
+        <div class="actions">
+          <a class="button" href={site.mapUrl}>Route oeffnen</a>
+          <a class="button ghost" href="/de/bodrum-akyarlar-windvorhersage/">Windvorhersage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Wie weit ist Akyarlar von Bodrum entfernt?</h2>
+        <p>
+          Die Strecke <strong>Bodrum Akyarlar Entfernung</strong> betraegt ueber die D330 Route
+          etwa 23-24 km. Je nach Verkehr dauert die Fahrt meist 35-40 Minuten.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Wie kommt man nach Akyarlar?</h2>
+        <p>
+          Mit dem Auto faehrt man vom Zentrum Bodrum Richtung Turgutreis und weiter nach Akyarlar.
+          Es gibt auch kommunale und private Busse ab Bodrum Busbahnhof sowie entlang der Strecke.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Wie ist das Meer in Akyarlar?</h2>
+        <p>
+          Das Meer ist klar, kuehl und durch die Bucht meist kontrolliert. Morgens ist es oft
+          ideal fuer <strong>Stand Up Paddling Bodrum</strong>, nachmittags eher fuer Windsurfen.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Haeufige Fragen zu Akyarlar" />
+      <div class="faq-grid">
+        {deFaqSets.faq.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

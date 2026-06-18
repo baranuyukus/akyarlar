@@ -1,0 +1,55 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import WindguruWidget from "@components/WindguruWidget.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.wind;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.wind}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Прогноз ветра Бодрум Акьярлар</p>
+        <h1>Прогноз ветра Бодрум Акьярлар для виндсерфинга и SUP</h1>
+        <p>
+          Смотрите <strong>прогноз ветра Бодрум Акьярлар</strong>, <strong>Akyarlar Windguru</strong>
+          и Windy перед уроком или SUP. Утром бухта часто спокойнее для <strong>SUP Бодрум</strong>,
+          а после обеда мелтем лучше подходит для виндсерфинга.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить сегодняшний ветер</a>
+          <a class="button ghost" href="/ru/uroki-vindsorfinga-bodrum/">Уроки виндсерфинга</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WindguruWidget />
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Карта Windy" title="Посмотреть ветер Акьярлар на карте" text="Сравнивайте Windy и Windguru, чтобы понять направление ветра, локальный поток и защищенное положение бухты." />
+      <div class="windy-panel">
+        <iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=11&overlay=wind&product=ecmwf&level=surface&lat=36.919&lon=27.291&detailLat=36.968&detailLon=27.291&detail=true&message=true" frameborder="0" loading="lazy" title="Карта Windy прогноза ветра Бодрум Акьярлар"></iframe>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container">
+      <div class="grid">
+        <article class="card"><h3>SUP утром</h3><p><strong>Paddle board Бодрум</strong> лучше планировать утром, когда вода в Акьярларе спокойнее и прозрачнее.</p></article>
+        <article class="card"><h3>Виндсерфинг после обеда</h3><p>Мелтем часто становится стабильнее позже, создавая хорошие условия для уроков и практики.</p></article>
+        <article class="card"><h3>Защищенная бухта</h3><p>Акьярлар закрывает большие волны открытого моря, поэтому ветер можно использовать для обучения без лишней волны.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы о ветре в Акьярларе" />
+      <div class="faq-grid">
+        {ruFaqSets.wind.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,98 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruGuideLinks, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.home;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.home}>
+  <section class="hero">
+    <OptimizedImage class="hero-media" src={site.heroImage} webp={site.heroImageWebp} avif={site.heroImageAvif} alt="Бухта Акьярлар в Бодруме для уроков виндсерфинга" loading="eager" fetchpriority="high" width={1600} height={1063} sizes="100vw" />
+    <div class="hero-inner">
+      <p class="eyebrow">Школа виндсерфинга Бодрум в Акьярларе</p>
+      <h1>Akyarlar Windsurf</h1>
+      <p class="lead">
+        Учитесь <strong>виндсерфингу в Бодруме</strong> в защищенной и удобной для новичков бухте:
+        индивидуальные занятия, регулярный ветер мелтем и семейная <strong>школа виндсерфинга Бодрум</strong>
+        с опытом у моря более 35 лет.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href={site.whatsapp}>Спросить в WhatsApp</a>
+        <a class="button secondary" href="/ru/uroki-vindsorfinga-bodrum/">Посмотреть уроки</a>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Преимущества Akyarlar Windsurf">
+      <div><strong>35+ лет</strong><span>Семейный опыт в одной бухте</span></div>
+      <div><strong>Акьярлар</strong><span>Мелкая, чистая и защищенная вода</span></div>
+      <div><strong>6 часов</strong><span>Индивидуальный курс до уверенного возвращения</span></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Почему Akyarlar Windsurf?" title="Безопасная школа виндсерфинга в Бодруме для новичков" text="Акьярлар - не просто красивая бухта. Защищенная вода, регулярный ветер и семейный пляж делают ее одним из самых удобных мест, чтобы начать виндсерфинг в Бодруме." />
+      <div class="grid">
+        <article class="card">
+          <h3><strong>Индивидуальные уроки виндсерфинга</strong></h3>
+          <p>Занятия строятся по уровню, возрасту, уверенности в воде и графику отдыха. Главная цель - личный прогресс, а не большой групповой поток.</p>
+          <a href="/ru/uroki-vindsorfinga-bodrum/">Индивидуальный курс</a>
+        </article>
+        <article class="card">
+          <h3>Бухта для начинающих</h3>
+          <p>Акьярлар защищен от больших волн открытого моря, поэтому баланс, парус и повороты легче отрабатывать спокойно и безопасно.</p>
+          <a href="/ru/akyarlar-vindsorfing-spot/">Akyarlar Windsurf Spot</a>
+        </article>
+        <article class="card">
+          <h3>Дети и семьи</h3>
+          <p>При подходящих условиях дети могут начинать примерно с 5-6 лет на маленьких досках и легких парусах.</p>
+          <a href="/ru/shkola-vindsorfinga-bodrum/">Семейная школа</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Как идет обучение</p>
+        <h2>От первого баланса до безопасного возвращения</h2>
+        <p>
+          На курсе <strong>уроки виндсерфинга Бодрум</strong> мы не держим ученика в лишней теории.
+          С первого занятия вы работаете в воде: баланс, парус, направление и возвращение к старту.
+        </p>
+        <ul class="check-list">
+          <li>Подбор доски и паруса под рост, вес и ветер.</li>
+          <li>Практика в защищенной от волн бухте.</li>
+          <li>После базы - более длинные проходы с поддержкой лодки.</li>
+          <li>6-часовой индивидуальный курс для реальных навыков новичка.</li>
+        </ul>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Чистая вода и семейный пляж Акьярлар в Бодруме" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="Планирование" title="Спланируйте день на воде в Акьярларе" />
+      <div class="grid">
+        {ruGuideLinks.map((guide) => (
+          <article class="card"><h3>{guide.title}</h3><p>{guide.text}</p><a href={guide.href}>Подробнее</a></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Перед первым уроком виндсерфинга в Бодруме" />
+      <div class="faq-grid">
+        {ruFaqSets.home.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

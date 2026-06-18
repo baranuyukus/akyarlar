@@ -1,0 +1,47 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.rental;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.rental}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Прокат виндсерфинга Бодрум</p>
+        <h1>Оборудование для виндсерфинга в Акьярларе</h1>
+        <p>
+          <strong>Прокат виндсерфинга Бодрум</strong> должен учитывать уровень, ветер и способность
+          безопасно вернуться. Поэтому оборудование подбирается по опыту, погоде и реальным условиям дня.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить оборудование</a>
+          <a class="button ghost" href="/ru/prognoz-vetra-bodrum-akyarlar/">Прогноз ветра</a>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Сначала уровень</h3><p>Новичкам обычно лучше начать с урока, чтобы уверенно ехать и возвращаться.</p></article>
+        <article class="card"><h3>Подбор паруса</h3><p>Парус и доска выбираются по ветру, весу, опыту и цели занятия.</p></article>
+        <article class="card"><h3>Безопасность бухты</h3><p>Акьярлар удобен для контроля, но решение всегда зависит от реального ветра.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Почему урок перед прокатом важен</h2><p>Перед тем как брать <strong>оборудование для виндсерфинга Бодрум</strong>, важно уверенно стартовать, управлять парусом, поворачивать и возвращаться. Это защищает ученика, других людей и оборудование.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы о прокате" />
+      <div class="faq-grid">
+        {ruFaqSets.rental.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

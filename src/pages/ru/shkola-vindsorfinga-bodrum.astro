@@ -1,0 +1,58 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.school;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.school}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Школа виндсерфинга Бодрум</p>
+        <h1>Семейная школа виндсерфинга в Бодруме Акьярлар</h1>
+        <p>
+          Akyarlar Windsurf - это <strong>школа виндсерфинга Бодрум</strong>, где основной формат -
+          индивидуальные занятия. Дети, семьи и взрослые учатся спокойно, с понятной техникой и
+          настоящим чувством безопасности на воде.
+        </p>
+        <ul class="check-list">
+          <li>Индивидуальное обучение вместо переполненных групп.</li>
+          <li>Более 35 лет опыта в той же бухте.</li>
+          <li>Детские уроки примерно с 5-6 лет при подходящих условиях.</li>
+          <li>Семейный пляж с кафе и ресторанами рядом.</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить урок</a>
+          <a class="button ghost" href="/ru/uroki-vindsorfinga-bodrum/">6-часовой курс</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Семейная бухта Акьярлар для уроков виндсерфинга в Бодруме" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Наш подход" title="Индивидуальное обучение с личным вниманием" text="Наша цель - не отправить на воду как можно больше людей одновременно. Мы хотим, чтобы ученик действительно понял виндсерфинг и захотел снова выйти в море без страха." />
+      <div class="grid">
+        <article class="card"><h3><strong>Виндсерфинг для детей Бодрум</strong></h3><p>Маленькие паруса, легкие доски и игровые упражнения помогают детям почувствовать море спокойно.</p></article>
+        <article class="card"><h3>Взрослые новички</h3><p>Для осторожного старта помогают мелкая вода, ясная структура урока и защищенная зона.</p></article>
+        <article class="card"><h3>Семейная атмосфера</h3><p>Родители могут оставаться рядом на пляже, а на лодочных этапах наблюдать прогресс ближе.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы о школе виндсерфинга" />
+      <div class="faq-grid">
+        {ruFaqSets.school.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

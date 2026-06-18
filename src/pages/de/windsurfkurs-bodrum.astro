@@ -1,0 +1,70 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.lesson;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.lesson}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Windsurfkurs Bodrum</p>
+        <h1>Privater Windsurfkurs in Bodrum Akyarlar</h1>
+        <p>
+          Ein <strong>Windsurfkurs Bodrum</strong> sollte sicher, praktisch und auf echte
+          Wassersicherheit ausgerichtet sein. In Akyarlar lernen Anfaenger in einer
+          wellengeschuetzten Bucht mit flachem Wasser, Meltemi-Wind und privater Betreuung.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Kurszeiten fragen</a>
+          <a class="button ghost" href="/de/bodrum-akyarlar-windvorhersage/">Wind pruefen</a>
+        </div>
+      </div>
+      <div class="process">
+        <article><h3>Erste Kontrolle</h3><p>Balance, Segel heben, Lenken und kurze kontrollierte Fahrten in der Bucht.</p></article>
+        <article><h3>Wenden</h3><p>Rueckkehr zum Ausgangspunkt ueben, statt vom Strand wegzutreiben.</p></article>
+        <article><h3>Bootssupport</h3><p>Nach den Grundlagen koennen laengere freie Fahrten vom Boot begleitet werden.</p></article>
+        <article><h3>6-Stunden-Ziel</h3><p>Ziel ist sichere Anfaenger-Selbststaendigkeit, nicht nur auf dem Board zu stehen.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section">
+        <h2>Warum ein 6-stuendiger privater Windsurfkurs?</h2>
+        <p>
+          Ein Schnupperkurs ist ein guter Start. Ein strukturierter <strong>privater Windsurfkurs Bodrum</strong>
+          gibt aber genug Wiederholung fuer Balance, Segelkraft, Richtungswechsel und sichere Rueckkehr.
+          Die Stunden werden nach Wind, Niveau und Urlaubsplan gelegt.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Kann man nach der ersten Stunde wirklich fahren?</h2>
+        <p>
+          Mit geeignetem Wind und passender Ausruestung schaffen viele Schueler kurze kontrollierte
+          Fahrten und kommen wieder zurueck. Die geschuetzte Akyarlar Bucht macht diesen ersten Moment ruhiger.
+        </p>
+      </article>
+      <article class="article-section">
+        <h2>Kinder, Familien und vorsichtige Erwachsene</h2>
+        <p>
+          Kinder koennen bei passenden Bedingungen meist ab etwa 5-6 Jahren starten. Auch Erwachsene,
+          die im Meer unsicher sind, profitieren vom flachen, klaren und wellengeschuetzten Wasser.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zum privaten Windsurfkurs" />
+      <div class="faq-grid">
+        {deFaqSets.lesson.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

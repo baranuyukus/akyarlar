@@ -1,0 +1,58 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.school;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.school}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Windsurfschule Bodrum</p>
+        <h1>Familiengefuehrte Windsurfschule in Bodrum Akyarlar</h1>
+        <p>
+          Akyarlar Windsurf ist eine <strong>Windsurfschule Bodrum</strong>, die vor allem mit
+          privatem Unterricht arbeitet. Kinder, Familien und Erwachsene lernen in ruhigem Tempo,
+          mit klarer Anleitung und echter Sicherheit im Wasser.
+        </p>
+        <ul class="check-list">
+          <li>Privater Unterricht statt ueberfuellter Gruppen.</li>
+          <li>Mehr als 35 Jahre Erfahrung in derselben Bucht.</li>
+          <li>Kinderkurse ab etwa 5-6 Jahren bei passenden Bedingungen.</li>
+          <li>Familienfreundlicher Strand mit Restaurants und Cafes in der Naehe.</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Kurs anfragen</a>
+          <a class="button ghost" href="/de/windsurfkurs-bodrum/">6-Stunden-Kurs</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.familyImage} webp={site.familyImageWebp} avif={site.familyImageAvif} alt="Familienfreundliche Akyarlar Bucht fuer Windsurfkurse in Bodrum" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Unser Ansatz" title="Privater Unterricht mit persoenlicher Aufmerksamkeit" text="Unser Ziel ist nicht, moeglichst viele Menschen gleichzeitig aufs Wasser zu bringen. Wir moechten, dass jeder Schueler Windsurfen wirklich versteht und ohne Angst wieder aufs Board steigen will." />
+      <div class="grid">
+        <article class="card"><h3><strong>Windsurfen Kinder Bodrum</strong></h3><p>Kleine Segel, leichte Boards und spielerische Uebungen helfen Kindern, Vertrauen zum Meer aufzubauen.</p></article>
+        <article class="card"><h3>Erwachsene Anfaenger</h3><p>Wer vorsichtig startet, profitiert von flachem Wasser, klarer Struktur und einer geschuetzten Uebungsflaeche.</p></article>
+        <article class="card"><h3>Familiengefuehl</h3><p>Eltern koennen nah am Strand bleiben; auf Wunsch koennen Familien bei Bootseinheiten den Fortschritt beobachten.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zur Windsurfschule" />
+      <div class="faq-grid">
+        {deFaqSets.school.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

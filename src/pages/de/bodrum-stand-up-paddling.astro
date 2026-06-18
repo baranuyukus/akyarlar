@@ -1,0 +1,52 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.paddle;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.paddle}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Stand Up Paddling Bodrum</p>
+        <h1>SUP in Akyarlar: ruhiges Wasser am Morgen</h1>
+        <p>
+          <strong>Stand Up Paddling Bodrum</strong> ist in Akyarlar besonders angenehm, weil das
+          Meer morgens oft glatt, klar und ruhig ist. Die geschuetzte Bucht macht <strong>SUP Bodrum</strong>
+          fuer Anfaenger, Familien und Kinder sehr gut planbar.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>SUP-Zeit fragen</a>
+          <a class="button ghost" href="/de/bodrum-akyarlar-windvorhersage/">Wind pruefen</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.heroImage} webp={site.heroImageWebp} avif={site.heroImageAvif} alt="Akyarlar SUP und klares Morgenwasser in Bodrum" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="SUP Bedingungen" title="Morgens Paddle, nachmittags Windsurfen" text="Akyarlar hat einen natuerlichen Tagesrhythmus: morgens ruhiger fuer Paddle Board, spaeter mit Meltemi-Wind besser fuer Windsurfkurse." />
+      <div class="grid">
+        <article class="card"><h3>Ruhiges Wasser</h3><p>Fruehe Stunden bieten oft wenig Wind, klare Sicht und weniger Bootsverkehr.</p></article>
+        <article class="card"><h3>Familienfreundlich</h3><p>Der Strand ist ueberschaubar und bietet Cafes, Restaurants und Sitzbereiche.</p></article>
+        <article class="card"><h3>Gute Kombination</h3><p>SUP am Morgen und Windsurfen am Nachmittag machen Akyarlar zu einem vollen Wassersporttag.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zu SUP in Akyarlar" />
+      <div class="faq-grid">
+        {deFaqSets.paddle.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

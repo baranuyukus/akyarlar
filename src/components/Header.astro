@@ -3,16 +3,20 @@ import { site } from "@data/site";
 
 const currentPath = Astro.url.pathname;
 type Props = {
-  lang?: "tr" | "en";
+  lang?: "tr" | "en" | "de" | "ru";
   alternates?: {
     tr?: string;
     en?: string;
+    de?: string;
+    ru?: string;
     "x-default"?: string;
   };
 };
 
 const { lang = "tr", alternates = {} } = Astro.props;
 const isEn = lang === "en";
+const isDe = lang === "de";
+const isRu = lang === "ru";
 
 const isCurrent = (href: string) => currentPath === href;
 const labels = isEn
@@ -34,6 +38,44 @@ const labels = isEn
       wind: "Wind",
       contact: "Contact"
     }
+  : isDe
+    ? {
+        address: "Akyarlar, Bodrum / Tuerkei",
+        brandSmall: "Windsurfschule Bodrum",
+        menu: "Menue oeffnen",
+        home: "Startseite",
+        services: "Angebote",
+        school: "Windsurfschule Bodrum",
+        lessons: "Windsurfkurs",
+        rental: "Ausruestungsverleih",
+        akyarlar: "Akyarlar",
+        guide: "Guide",
+        bay: "Akyarlar Bucht",
+        paddle: "SUP Bodrum",
+        waterSports: "Wassersport",
+        windForecast: "Windvorhersage",
+        wind: "Wind",
+        contact: "Kontakt"
+      }
+  : isRu
+    ? {
+        address: "Akyarlar, Bodrum / Турция",
+        brandSmall: "Школа виндсерфинга Бодрум",
+        menu: "Открыть меню",
+        home: "Главная",
+        services: "Услуги",
+        school: "Школа виндсерфинга",
+        lessons: "Уроки",
+        rental: "Прокат",
+        akyarlar: "Акьярлар",
+        guide: "Гид",
+        bay: "Бухта Акьярлар",
+        paddle: "SUP Бодрум",
+        waterSports: "Водный спорт",
+        windForecast: "Прогноз ветра",
+        wind: "Ветер",
+        contact: "Контакты"
+      }
   : {
       address: site.shortAddress,
       brandSmall: "Bodrum Rüzgar Sörfü Okulu",
@@ -65,6 +107,32 @@ const paths = isEn
       windForecast: "/en/bodrum-akyarlar-wind-forecast/",
       contact: "/en/contact/"
     }
+  : isDe
+    ? {
+        home: "/de/",
+        school: "/de/windsurfschule-bodrum/",
+        lessons: "/de/windsurfkurs-bodrum/",
+        rental: "/de/windsurf-verleih-bodrum/",
+        akyarlar: "/de/akyarlar-windsurf-spot/",
+        bay: "/de/akyarlar-bucht-reisefuehrer/",
+        paddle: "/de/bodrum-stand-up-paddling/",
+        waterSports: "/de/bodrum-wassersport/",
+        windForecast: "/de/bodrum-akyarlar-windvorhersage/",
+        contact: "/de/kontakt/"
+      }
+  : isRu
+    ? {
+        home: "/ru/",
+        school: "/ru/shkola-vindsorfinga-bodrum/",
+        lessons: "/ru/uroki-vindsorfinga-bodrum/",
+        rental: "/ru/prokat-vindsorfinga-bodrum/",
+        akyarlar: "/ru/akyarlar-vindsorfing-spot/",
+        bay: "/ru/bukhta-akyarlar-gid/",
+        paddle: "/ru/sup-bodrum-akyarlar/",
+        waterSports: "/ru/vodnye-vidy-sporta-bodrum/",
+        windForecast: "/ru/prognoz-vetra-bodrum-akyarlar/",
+        contact: "/ru/kontakty/"
+      }
   : {
       home: "/",
       school: "/bodrum-ruzgar-sorfu-okulu/",
@@ -79,6 +147,8 @@ const paths = isEn
     };
 const trHref = alternates.tr ?? "/";
 const enHref = alternates.en ?? "/en/";
+const deHref = alternates.de ?? "/de/";
+const ruHref = alternates.ru ?? "/ru/";
 ---
 
 <header class="site-header" data-site-header>
@@ -87,7 +157,7 @@ const enHref = alternates.en ?? "/en/";
     <a href={`tel:${site.phoneE164}`}>{site.phoneDisplay}</a>
   </div>
   <div class="header-main">
-    <a class="brand" href={paths.home} aria-label={isEn ? "Akyarlar Windsurf home page" : "Akyarlar Windsurf ana sayfa"}>
+    <a class="brand" href={paths.home} aria-label={isEn ? "Akyarlar Windsurf home page" : isDe ? "Akyarlar Windsurf Startseite" : isRu ? "Akyarlar Windsurf главная" : "Akyarlar Windsurf ana sayfa"}>
       <span class="brand-mark">AW</span>
       <span>
         <strong>Akyarlar Windsurf</strong>
@@ -102,7 +172,7 @@ const enHref = alternates.en ?? "/en/";
       <span class="sr-only">{labels.menu}</span>
     </button>
 
-    <nav class="nav" id="primary-nav" aria-label={isEn ? "Main menu" : "Ana menü"} data-primary-nav>
+    <nav class="nav" id="primary-nav" aria-label={isEn ? "Main menu" : isDe ? "Hauptmenue" : isRu ? "Главное меню" : "Ana menü"} data-primary-nav>
       <a href={paths.home} aria-current={isCurrent(paths.home) ? "page" : undefined}>{labels.home}</a>
       <div class="nav-item has-menu">
         <button class="nav-trigger" type="button" aria-expanded="false">
@@ -146,9 +216,11 @@ const enHref = alternates.en ?? "/en/";
       <a href={paths.contact} aria-current={isCurrent(paths.contact) ? "page" : undefined}>{labels.contact}</a>
     </nav>
 
-    <div class="language-switcher" aria-label={isEn ? "Language selection" : "Dil seçimi"}>
-      <a href={trHref} aria-current={!isEn ? "true" : undefined}>TR</a>
+    <div class="language-switcher" aria-label={isEn ? "Language selection" : isDe ? "Sprachauswahl" : isRu ? "Выбор языка" : "Dil seçimi"}>
+      <a href={trHref} aria-current={lang === "tr" ? "true" : undefined}>TR</a>
       <a href={enHref} aria-current={isEn ? "true" : undefined}>EN</a>
+      <a href={deHref} aria-current={isDe ? "true" : undefined}>DE</a>
+      <a href={ruHref} aria-current={isRu ? "true" : undefined}>RU</a>
     </div>
     <a class="header-cta" href={site.whatsapp}>WhatsApp</a>
   </div>

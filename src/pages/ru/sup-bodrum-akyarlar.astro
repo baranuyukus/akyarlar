@@ -1,0 +1,52 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.paddle;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.paddle}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">SUP Бодрум</p>
+        <h1>SUP в Акьярларе: спокойная вода утром</h1>
+        <p>
+          <strong>SUP Бодрум</strong> в Акьярларе особенно приятен утром, когда море часто ровное,
+          прозрачное и спокойное. Защищенная бухта делает <strong>paddle board Бодрум</strong>
+          удобным для новичков, семей и детей.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>Спросить SUP</a>
+          <a class="button ghost" href="/ru/prognoz-vetra-bodrum-akyarlar/">Проверить ветер</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.heroImage} webp={site.heroImageWebp} avif={site.heroImageAvif} alt="SUP в Акьярларе и чистая вода утром" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Условия для SUP" title="Утром paddle, после обеда виндсерфинг" text="У Акьярлара понятный ритм дня: утром спокойнее для SUP, позже с мелтемом лучше для уроков виндсерфинга." />
+      <div class="grid">
+        <article class="card"><h3>Спокойная вода</h3><p>Ранние часы часто дают меньше ветра, прозрачную воду и меньше движения лодок.</p></article>
+        <article class="card"><h3>Для семей</h3><p>Пляж компактный, рядом кафе, рестораны и места для отдыха.</p></article>
+        <article class="card"><h3>Хорошая комбинация</h3><p>SUP утром и виндсерфинг после обеда делают день в Акьярларе насыщенным.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Вопросы про SUP в Акьярларе" />
+      <div class="faq-grid">
+        {ruFaqSets.paddle.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

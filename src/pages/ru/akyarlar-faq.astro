@@ -1,0 +1,45 @@
+---
+import SectionHeading from "@components/SectionHeading.astro";
+import { ruFaqSets, ruPageMeta } from "@data/ru";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = ruPageMeta.faq;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="ru" keywords={meta.keywords} includeFaq faqItems={ruFaqSets.faq}>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Акьярлар FAQ</p>
+        <h1>Акьярлар FAQ: расстояние, дорога, море и ветер</h1>
+        <p>
+          Здесь собраны ответы на основные вопросы про <strong>Акьярлар Бодрум</strong>:
+          сколько километров от центра Бодрума, как добраться, какое море и почему бухта подходит
+          для виндсерфинга и SUP.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.mapUrl}>Открыть маршрут</a>
+          <a class="button ghost" href="/ru/prognoz-vetra-bodrum-akyarlar/">Прогноз ветра</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-body">
+      <article class="article-section"><h2>Сколько км от Бодрума до Акьярлара?</h2><p><strong>Бодрум Акьярлар расстояние</strong> по дороге D330 составляет примерно 23-24 км. Обычно поездка занимает 35-40 минут в зависимости от сезона.</p></article>
+      <article class="article-section"><h2>Как добраться в Акьярлар?</h2><p>На машине нужно ехать из центра Бодрума в сторону Тургутрейса и далее к Акьярлару. Также есть муниципальные и частные автобусы от автовокзала Бодрума.</p></article>
+      <article class="article-section"><h2>Какое море в Акьярларе?</h2><p>Море прозрачное, прохладное и часто контролируемое внутри бухты. Утром оно подходит для <strong>SUP Бодрум</strong>, после обеда - для виндсерфинга.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Частые вопросы об Акьярларе" />
+      <div class="faq-grid">
+        {ruFaqSets.faq.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

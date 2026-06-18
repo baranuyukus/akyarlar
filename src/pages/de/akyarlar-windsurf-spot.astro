@@ -1,0 +1,52 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import { deFaqSets, dePageMeta } from "@data/de";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const meta = dePageMeta.akyarlar;
+---
+
+<BaseLayout title={meta.title} description={meta.description} path={meta.path} lang="de" keywords={meta.keywords} includeFaq faqItems={deFaqSets.akyarlar}>
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Akyarlar Windsurf Spot</p>
+        <h1>Akyarlar: geschuetzter Windsurf Spot in Bodrum</h1>
+        <p>
+          Der <strong>Akyarlar Windsurf Spot</strong> ist besonders wertvoll, weil die Bucht
+          grosse Wellen abfaengt, trotzdem regelmaessigen Wind bekommt und Einsteigern
+          viel Sicherheit gibt. Fuer viele ist es die <strong>beste Bucht zum Windsurfen in Bodrum</strong>.
+        </p>
+        <div class="actions">
+          <a class="button" href="/de/windsurfkurs-bodrum/">Windsurfkurs ansehen</a>
+          <a class="button ghost" href="/de/akyarlar-bucht-reisefuehrer/">Bucht Guide</a>
+        </div>
+      </div>
+      <div class="image-panel quiet">
+        <OptimizedImage src={site.heroImage} webp={site.heroImageWebp} avif={site.heroImageAvif} alt="Akyarlar Windsurf Spot in Bodrum mit klarem Wasser" width={1000} height={664} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Warum dieser Spot?" title="Kontrollierter Wind, flaches Wasser, klare Sicht" />
+      <div class="grid">
+        <article class="card"><h3>Anfaenger</h3><p>Flache Bereiche und weniger Welle helfen beim ersten Gleichgewicht, Segelheben und sicheren Drehen.</p></article>
+        <article class="card"><h3>Fortgeschrittene</h3><p>Bei passendem Wind sind Trapez, Fuss-Schlaufen, Carving und Speed-Kontrolle moeglich.</p></article>
+        <article class="card"><h3>Familien</h3><p>Der Strand ist ueberschaubar, familienfreundlich und bietet Orte zum Warten, Essen und Zuschauen.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ" title="Fragen zum Akyarlar Windsurf Spot" />
+      <div class="faq-grid">
+        {deFaqSets.akyarlar.map((faq) => <article class="faq"><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

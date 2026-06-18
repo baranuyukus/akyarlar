@@ -1,8 +1,10 @@
+import { dePageMeta } from "@data/de";
 import { enPageMeta } from "@data/en";
+import { ruPageMeta } from "@data/ru";
 import { pageMeta, site } from "@data/site";
 
 const paths = Array.from(
-  new Set([...Object.values(pageMeta), ...Object.values(enPageMeta)].map((meta) => meta.path))
+  new Set([...Object.values(pageMeta), ...Object.values(enPageMeta), ...Object.values(dePageMeta), ...Object.values(ruPageMeta)].map((meta) => meta.path))
 ).sort();
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
