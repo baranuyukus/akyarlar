@@ -10,6 +10,7 @@ type Props = {
   pageTitle: string;
   pageDescription: string;
   pageUrl: string;
+  lang?: "tr" | "en" | "de" | "ru";
   includeFaq?: boolean;
   faqItems?: FaqItem[];
   businessDescription?: string;
@@ -20,15 +21,94 @@ const {
   pageTitle,
   pageDescription,
   pageUrl,
+  lang = "tr",
   includeFaq = false,
   faqItems = faqs,
   businessDescription = site.description,
   aboutName = "Rüzgar sörfü eğitimi"
 } = Astro.props;
 
+const languageMap = {
+  tr: "tr-TR",
+  en: "en-US",
+  de: "de-DE",
+  ru: "ru-RU"
+};
+const homePathMap = {
+  tr: "/",
+  en: "/en/",
+  de: "/de/",
+  ru: "/ru/"
+};
+const serviceNames = {
+  tr: {
+    lesson: "Bodrum rüzgar sörfü özel dersi",
+    kids: "Çocuklar için rüzgar sörfü eğitimi",
+    rental: "Windsurf ekipman kiralama",
+    course: "6 saatlik özel rüzgar sörfü dersi"
+  },
+  en: {
+    lesson: "Private windsurf lessons in Bodrum",
+    kids: "Windsurf lessons for children in Bodrum",
+    rental: "Windsurf equipment rental",
+    course: "6-hour private windsurf course"
+  },
+  de: {
+    lesson: "Private Windsurfkurse in Bodrum",
+    kids: "Windsurfkurse fuer Kinder in Bodrum",
+    rental: "Windsurf Ausruestungsverleih",
+    course: "6-stuendiger privater Windsurfkurs"
+  },
+  ru: {
+    lesson: "Индивидуальные уроки виндсерфинга в Бодруме",
+    kids: "Уроки виндсерфинга для детей в Бодруме",
+    rental: "Прокат оборудования для виндсерфинга",
+    course: "6-часовой индивидуальный курс виндсерфинга"
+  }
+};
+const currentLanguage = languageMap[lang];
+const currentServices = serviceNames[lang];
+const homeUrl = new URL(homePathMap[lang], site.domain).toString();
+const organizationId = `${site.domain}/#organization`;
+const websiteId = `${site.domain}/#website`;
+const localBusinessId = `${site.domain}/#localbusiness`;
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": organizationId,
+  name: site.name,
+  legalName: site.legalName,
+  url: site.domain,
+  logo: new URL("/favicon.svg", site.domain).toString(),
+  image: site.socialImage,
+  foundingDate: "1988",
+  description: businessDescription,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: site.phoneE164,
+    contactType: "customer service",
+    availableLanguage: ["Turkish", "English", "German", "Russian"]
+  },
+  sameAs: [site.mapUrl]
+};
+
+const webSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: site.name,
+  url: site.domain,
+  publisher: {
+    "@id": organizationId
+  },
+  inLanguage: ["tr-TR", "en-US", "de-DE", "ru-RU"]
+};
+
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": ["SportsActivityLocation", "LocalBusiness"],
+  "@id": localBusinessId,
   name: site.name,
   legalName: site.legalName,
   url: site.domain,
@@ -45,6 +125,9 @@ const localBusiness = {
     postalCode: "48960",
     addressCountry: "TR"
   },
+  parentOrganization: {
+    "@id": organizationId
+  },
   areaServed: ["Akyarlar", "Turgutreis", "Bodrum", "Muğla"],
   sameAs: [site.mapUrl]
 };
@@ -55,14 +138,93 @@ const webPage = {
   name: pageTitle,
   description: pageDescription,
   url: pageUrl,
+  inLanguage: currentLanguage,
   isPartOf: {
-    "@type": "WebSite",
-    name: site.name,
-    url: site.domain
+    "@id": websiteId
+  },
+  publisher: {
+    "@id": organizationId
   },
   about: {
     "@type": "Thing",
     name: aboutName
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: site.name,
+      item: homeUrl
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: pageTitle,
+      item: pageUrl
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${pageUrl}#service`,
+  name: currentServices.lesson,
+  description: pageDescription,
+  provider: {
+    "@id": localBusinessId
+  },
+  areaServed: ["Akyarlar", "Turgutreis", "Bodrum", "Muğla"],
+  serviceType: ["Windsurf lessons", "Children windsurf lessons", "Windsurf equipment rental", "SUP paddle board"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: site.name,
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: currentServices.lesson
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: currentServices.kids
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: currentServices.rental
+        }
+      }
+    ]
+  }
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "@id": `${pageUrl}#course`,
+  name: currentServices.course,
+  description: pageDescription,
+  inLanguage: currentLanguage,
+  provider: {
+    "@id": organizationId
+  },
+  educationalLevel: "Beginner",
+  teaches: ["Balance", "Sail control", "Steering", "Turning", "Safe return", "Wind reading"],
+  courseMode: "In person",
+  location: {
+    "@id": localBusinessId
   }
 };
 
@@ -80,6 +242,11 @@ const faqSchema = {
 };
 ---
 
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(webSite)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(webPage)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
 {includeFaq && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

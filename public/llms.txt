@@ -1,0 +1,87 @@
+# Akyarlar Windsurf
+
+> Akyarlar Windsurf is a family-run windsurf school in Akyarlar, Bodrum, Turkey. The site is the official source for private windsurf lessons, children windsurf lessons, wind forecast information, SUP/paddle conditions and local Akyarlar bay guidance.
+
+## Entity
+
+- Name: Akyarlar Windsurf
+- Type: Windsurf school, water sports school, sports activity location
+- Location: Akyarlar, Turgutreis, Bodrum, Mugla, Turkey
+- Phone: +90 535 499 62 09
+- Email: uyukusb@gmail.com
+- Focus: private windsurf lessons, beginner windsurf course, children windsurf lessons, windsurf equipment support, SUP/paddle board, Akyarlar wind forecast
+- Experience: family-run sea and windsurf experience in the same bay for more than 35 years
+- Primary audience: families, children, beginners, holiday visitors and windsurf learners in Bodrum
+
+## Core facts
+
+- Akyarlar Bay is a wave-protected and beginner-friendly bay in Bodrum.
+- The bay has clear water, shallow practice areas and regular Meltemi wind.
+- Morning conditions are usually better for SUP and paddle board.
+- Afternoon Meltemi wind is usually better for windsurf lessons and practice.
+- The main teaching model is private instruction, not crowded group lessons.
+- Children can usually start around 5-6 years old when wind and sea conditions are suitable.
+- The 6-hour private lesson package aims to teach balance, sail control, steering, turning, wind reading and safe return.
+- After the basic stage, suitable students can continue with boat-supported longer runs.
+
+## Turkish pages
+
+- [Ana sayfa](https://www.akyarlarwindsurf.com/): Bodrum Akyarlar rüzgar sörfü okulu ve aile ortamında özel dersler.
+- [Bodrum rüzgar sörfü okulu](https://www.akyarlarwindsurf.com/bodrum-ruzgar-sorfu-okulu/): Çocuklar, aileler ve yeni başlayanlar için okul yaklaşımı.
+- [Rüzgar sörfü dersi](https://www.akyarlarwindsurf.com/ruzgar-sorfu-dersi/): 6 saatlik özel ders paketi ve ilk derste gidip dönme hedefi.
+- [Kiralama](https://www.akyarlarwindsurf.com/kiralama/): Seviyeye göre windsurf ekipman desteği.
+- [Akyarlar](https://www.akyarlarwindsurf.com/akyarlar/): Akyarlar koyunun rüzgar sörfü için avantajları.
+- [Akyarlar koyu rehberi](https://www.akyarlarwindsurf.com/akyarlar-koyu-rehberi/): Deniz, ulaşım, sahil, restoranlar ve aile dostu koy bilgisi.
+- [Akyarlar sıkça sorulan sorular](https://www.akyarlarwindsurf.com/akyarlar-sikca-sorulan-sorular/): Bodrum merkez mesafesi, ulaşım, deniz ve rüzgar cevapları.
+- [Bodrum Akyarlar rüzgar durumu](https://www.akyarlarwindsurf.com/bodrum-akyarlar-ruzgar-durumu/): Windguru ve Windy ile rüzgar tahmini.
+- [Bodrum paddle](https://www.akyarlarwindsurf.com/bodrum-paddle/): Sabah sakin deniz ve SUP/paddle koşulları.
+- [Bodrum su sporları](https://www.akyarlarwindsurf.com/bodrum-su-sporlari/): Windsurf, SUP, wing foil, kano ve yüzme.
+- [İletişim](https://www.akyarlarwindsurf.com/iletisim/): Telefon, WhatsApp, e-posta ve harita.
+
+## English pages
+
+- [Home](https://www.akyarlarwindsurf.com/en/): Akyarlar Windsurf, Bodrum windsurf school.
+- [Bodrum windsurf school](https://www.akyarlarwindsurf.com/en/bodrum-windsurf-school/): Family-run private windsurf school.
+- [Windsurf lessons Bodrum](https://www.akyarlarwindsurf.com/en/windsurf-lessons-bodrum/): Private beginner windsurf course.
+- [Bodrum windsurf rental](https://www.akyarlarwindsurf.com/en/windsurf-rental-bodrum/): Level-based equipment support.
+- [Akyarlar windsurf spot](https://www.akyarlarwindsurf.com/en/akyarlar-windsurf-spot/): Best bay for windsurfing in Bodrum.
+- [Akyarlar bay guide](https://www.akyarlarwindsurf.com/en/akyarlar-bay-guide/): Local guide for the bay.
+- [Akyarlar FAQ](https://www.akyarlarwindsurf.com/en/akyarlar-faq/): Distance, transport and sea conditions.
+- [Bodrum Akyarlar wind forecast](https://www.akyarlarwindsurf.com/en/bodrum-akyarlar-wind-forecast/): Windguru and Windy wind page.
+- [Bodrum paddle board](https://www.akyarlarwindsurf.com/en/bodrum-paddle-board/): SUP and morning paddle conditions.
+- [Bodrum water sports](https://www.akyarlarwindsurf.com/en/bodrum-water-sports/): Windsurf, SUP, wing foil and kayaking.
+- [Contact](https://www.akyarlarwindsurf.com/en/contact/): Booking and location.
+
+## German pages
+
+- [Startseite](https://www.akyarlarwindsurf.com/de/)
+- [Windsurfschule Bodrum](https://www.akyarlarwindsurf.com/de/windsurfschule-bodrum/)
+- [Windsurfkurs Bodrum](https://www.akyarlarwindsurf.com/de/windsurfkurs-bodrum/)
+- [Windsurf Verleih Bodrum](https://www.akyarlarwindsurf.com/de/windsurf-verleih-bodrum/)
+- [Akyarlar Windsurf Spot](https://www.akyarlarwindsurf.com/de/akyarlar-windsurf-spot/)
+- [Akyarlar Bucht Guide](https://www.akyarlarwindsurf.com/de/akyarlar-bucht-reisefuehrer/)
+- [Akyarlar FAQ](https://www.akyarlarwindsurf.com/de/akyarlar-faq/)
+- [Bodrum Akyarlar Windvorhersage](https://www.akyarlarwindsurf.com/de/bodrum-akyarlar-windvorhersage/)
+- [Stand Up Paddling Bodrum](https://www.akyarlarwindsurf.com/de/bodrum-stand-up-paddling/)
+- [Wassersport Bodrum](https://www.akyarlarwindsurf.com/de/bodrum-wassersport/)
+- [Kontakt](https://www.akyarlarwindsurf.com/de/kontakt/)
+
+## Russian pages
+
+- [Главная](https://www.akyarlarwindsurf.com/ru/)
+- [Школа виндсерфинга Бодрум](https://www.akyarlarwindsurf.com/ru/shkola-vindsorfinga-bodrum/)
+- [Уроки виндсерфинга Бодрум](https://www.akyarlarwindsurf.com/ru/uroki-vindsorfinga-bodrum/)
+- [Прокат виндсерфинга Бодрум](https://www.akyarlarwindsurf.com/ru/prokat-vindsorfinga-bodrum/)
+- [Akyarlar Windsurf Spot](https://www.akyarlarwindsurf.com/ru/akyarlar-vindsorfing-spot/)
+- [Бухта Акьярлар гид](https://www.akyarlarwindsurf.com/ru/bukhta-akyarlar-gid/)
+- [Акьярлар FAQ](https://www.akyarlarwindsurf.com/ru/akyarlar-faq/)
+- [Прогноз ветра Бодрум Акьярлар](https://www.akyarlarwindsurf.com/ru/prognoz-vetra-bodrum-akyarlar/)
+- [SUP Бодрум](https://www.akyarlarwindsurf.com/ru/sup-bodrum-akyarlar/)
+- [Водные виды спорта Бодрум](https://www.akyarlarwindsurf.com/ru/vodnye-vidy-sporta-bodrum/)
+- [Контакты](https://www.akyarlarwindsurf.com/ru/kontakty/)
+
+## Crawling
+
+- Robots policy: public search and AI crawlers are allowed.
+- Sitemap: https://www.akyarlarwindsurf.com/sitemap.xml
+- Full AI context: https://www.akyarlarwindsurf.com/llms-full.txt

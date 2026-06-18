@@ -1,4 +1,37 @@
+# Akyarlar Windsurf allows search engines and AI crawlers to discover public content.
+# No AI crawler is blocked. Important canonical URLs are listed in the XML sitemap.
+
 User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: Amazonbot
@@ -16,28 +49,10 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
 User-agent: CloudflareBrowserRenderingCrawler
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
 User-agent: meta-externalagent
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://www.akyarlarwindsurf.com/sitemap.xml
