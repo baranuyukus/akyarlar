@@ -244,10 +244,31 @@ const ruHref = alternates.ru ?? "/ru/";
     const setOpen = (open) => {
       header.toggleAttribute("data-menu-open", open);
       toggle.setAttribute("aria-expanded", String(open));
+      if (!open) {
+        nav.querySelectorAll(".has-menu").forEach((menu) => {
+          menu.toggleAttribute("data-submenu-open", false);
+          menu.querySelector(".nav-trigger")?.setAttribute("aria-expanded", "false");
+        });
+      }
     };
 
     toggle.addEventListener("click", () => {
       setOpen(!header.hasAttribute("data-menu-open"));
+    });
+
+    nav.querySelectorAll(".nav-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const item = trigger.closest(".has-menu");
+        if (!item || !header.hasAttribute("data-menu-open")) return;
+
+        const open = !item.hasAttribute("data-submenu-open");
+        nav.querySelectorAll(".has-menu").forEach((menu) => {
+          menu.toggleAttribute("data-submenu-open", false);
+          menu.querySelector(".nav-trigger")?.setAttribute("aria-expanded", "false");
+        });
+        item.toggleAttribute("data-submenu-open", open);
+        trigger.setAttribute("aria-expanded", String(open));
+      });
     });
 
     nav.addEventListener("click", (event) => {

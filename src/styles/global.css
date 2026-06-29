@@ -224,7 +224,8 @@ main {
 }
 
 .has-menu:hover .nav-menu,
-.has-menu:focus-within .nav-menu {
+.has-menu:focus-within .nav-menu,
+.has-menu[data-submenu-open] .nav-menu {
   display: grid;
   gap: 4px;
 }
@@ -1076,13 +1077,18 @@ h3 {
 
   .nav-menu {
     position: static;
-    display: grid;
+    display: none;
     min-width: 0;
     gap: 6px;
     border: 0;
     padding: 0 0 0 12px;
     background: transparent;
     box-shadow: none;
+  }
+
+  .has-menu:focus-within .nav-menu,
+  .has-menu[data-submenu-open] .nav-menu {
+    display: grid;
   }
 
   .nav-menu::before {
