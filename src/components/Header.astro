@@ -158,7 +158,14 @@ const ruHref = alternates.ru ?? "/ru/";
   </div>
   <div class="header-main">
     <a class="brand" href={paths.home} aria-label={isEn ? "Akyarlar Windsurf home page" : isDe ? "Akyarlar Windsurf Startseite" : isRu ? "Akyarlar Windsurf главная" : "Akyarlar Windsurf ana sayfa"}>
-      <span class="brand-mark">AW</span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" focusable="false">
+          <path class="logo-sun" d="M30 8a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" />
+          <path class="logo-sail" d="M22 9 9 31h13V9Z" />
+          <path class="logo-sail logo-sail-light" d="M25 13v18h10L25 13Z" />
+          <path class="logo-board" d="M8 34c8 4 20 4 28 0" />
+        </svg>
+      </span>
       <span>
         <strong>Akyarlar Windsurf</strong>
         <small>{labels.brandSmall}</small>
