@@ -1081,6 +1081,25 @@ h3 {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.note-focus-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.86rem;
+}
+
+.note-focus-keywords strong {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-weight: 900;
+}
+
 .note-hero-media {
   overflow: hidden;
   border-radius: 8px;

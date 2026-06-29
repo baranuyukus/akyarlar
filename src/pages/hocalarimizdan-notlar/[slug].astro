@@ -34,7 +34,7 @@ const articleSchema = {
   dateModified: note.updatedAt,
   inLanguage: "tr-TR",
   articleSection: note.category,
-  keywords: note.tags.join(", "),
+  keywords: note.keywords,
   articleBody,
   mainEntityOfPage: {
     "@type": "WebPage",
@@ -60,6 +60,9 @@ const articleSchema = {
   schemaType="content"
   ogType="article"
   image={imageUrl}
+  publishedAt={note.publishedAt}
+  updatedAt={note.updatedAt}
+  tags={note.tags}
   structuredData={[articleSchema]}
 >
   <article class="note-detail">
@@ -74,6 +77,10 @@ const articleSchema = {
             <span>{note.author}</span>
             <time datetime={note.publishedAt}>Yayınlanma: {formatDate(note.publishedAt)}</time>
             <time datetime={note.updatedAt}>Güncelleme: {formatDate(note.updatedAt)}</time>
+          </div>
+          <div class="note-focus-keywords" aria-label="Odak anahtar kelimeler">
+            <span>Odak anahtar kelimeler:</span>
+            {note.tags.map((tag) => <strong>{tag}</strong>)}
           </div>
         </div>
         <OptimizedImage
@@ -114,7 +121,7 @@ const articleSchema = {
           <div>
             <strong>Etiketler</strong>
             <ul>
-              {note.tags.map((tag) => <li>{tag}</li>)}
+              {note.tags.map((tag) => <li><strong>{tag}</strong></li>)}
             </ul>
           </div>
         </aside>
