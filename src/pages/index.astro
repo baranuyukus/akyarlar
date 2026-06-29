@@ -2,10 +2,18 @@
 import OptimizedImage from "@components/OptimizedImage.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import WindguruWidget from "@components/WindguruWidget.astro";
+import { getNotePath, latestNotes, notesIndexPath } from "@data/notes";
 import { faqSets, pageMeta, site } from "@data/site";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const meta = pageMeta.home;
+const homeNotes = latestNotes.slice(0, 3);
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("tr-TR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(new Date(`${date}T12:00:00+03:00`));
 ---
 
 <BaseLayout title={meta.title} description={meta.description} path={meta.path} includeFaq faqItems={faqSets.home}>
@@ -273,6 +281,34 @@ const meta = pageMeta.home;
             <p>{faq.answer}</p>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Hocalarımızdan Notlar"
+        title="Sahadan küçük ama işe yarayan ders notları"
+        text="İlk ders, çocuk eğitimi, paddle saatleri ve Akyarlar rüzgarı hakkında hocalarımızın kısa notlarını okuyun."
+      />
+      <div class="note-grid note-grid-compact">
+        {homeNotes.map((note) => (
+          <article class="note-card">
+            <div class="note-card-body">
+              <div class="note-meta">
+                <span>{note.category}</span>
+                <time datetime={note.publishedAt}>{formatDate(note.publishedAt)}</time>
+              </div>
+              <h3><a href={getNotePath(note)}>{note.title}</a></h3>
+              <p>{note.description}</p>
+              <a class="text-link" href={getNotePath(note)}>Notu oku</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="button ghost" href={notesIndexPath}>Tüm hoca notları</a>
       </div>
     </div>
   </section>

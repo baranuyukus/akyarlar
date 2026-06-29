@@ -35,6 +35,7 @@ export const navItems = [
   { href: "/bodrum-akyarlar-ruzgar-durumu/", label: "Rüzgar Durumu" },
   { href: "/bodrum-paddle/", label: "Bodrum Paddle" },
   { href: "/bodrum-su-sporlari/", label: "Su Sporları" },
+  { href: "/hocalarimizdan-notlar/", label: "Hocalarımızdan Notlar" },
   { href: "/iletisim/", label: "İletişim" }
 ];
 

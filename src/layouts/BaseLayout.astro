@@ -23,6 +23,11 @@ type Props = {
   xDefault?: string;
   includeFaq?: boolean;
   faqItems?: Array<{ question: string; answer: string }>;
+  includeAlternates?: boolean;
+  schemaType?: "service" | "content";
+  structuredData?: Array<Record<string, unknown>>;
+  ogType?: string;
+  image?: string;
 };
 
 const {
@@ -35,17 +40,24 @@ const {
   alternates,
   xDefault,
   includeFaq = false,
-  faqItems
+  faqItems,
+  includeAlternates = true,
+  schemaType = "service",
+  structuredData = [],
+  ogType = "website",
+  image = site.socialImage
 } = Astro.props;
 const canonical = new URL(path, site.domain).toString();
 const routeAlternates = findRouteAlternates(path);
-const alternatePaths = alternates ?? {
-  tr: routeAlternates?.tr,
-  en: routeAlternates?.en,
-  de: routeAlternates?.de,
-  ru: routeAlternates?.ru,
-  "x-default": xDefault ?? routeAlternates?.tr ?? "/"
-};
+const alternatePaths = includeAlternates
+  ? alternates ?? {
+      tr: routeAlternates?.tr,
+      en: routeAlternates?.en,
+      de: routeAlternates?.de,
+      ru: routeAlternates?.ru,
+      "x-default": xDefault ?? routeAlternates?.tr ?? "/"
+    }
+  : {};
 const alternateLinks = Object.entries(alternatePaths)
   .filter((entry): entry is [string, string] => Boolean(entry[1]))
   .map(([hreflang, href]) => ({
@@ -83,16 +95,16 @@ const schemaAbout =
     <link rel="canonical" href={canonical} />
     {alternateLinks.map((link) => <link rel="alternate" hreflang={link.hreflang} href={link.url} />)}
     <meta property="og:locale" content={locale} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={site.socialImage} />
+    <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={site.socialImage} />
+    <meta name="twitter:image" content={image} />
     <link rel="preload" as="image" href={site.heroImageAvif} type="image/avif" imagesizes="100vw" />
     <link rel="icon" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -105,6 +117,8 @@ const schemaAbout =
       faqItems={faqItems}
       businessDescription={businessDescription}
       aboutName={schemaAbout}
+      schemaType={schemaType}
+      extraSchemas={structuredData}
     />
   </head>
   <body>

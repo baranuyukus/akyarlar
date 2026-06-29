@@ -1,0 +1,162 @@
+---
+import OptimizedImage from "@components/OptimizedImage.astro";
+import { getNotePath, notesIndexPath, teacherNotes } from "@data/notes";
+import { site } from "@data/site";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return teacherNotes.map((note) => ({
+    params: { slug: note.slug },
+    props: { note }
+  }));
+}
+
+const { note } = Astro.props;
+const path = getNotePath(note);
+const pageUrl = new URL(path, site.domain).toString();
+const imageUrl = new URL(note.coverImage, site.domain).toString();
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("tr-TR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(new Date(`${date}T12:00:00+03:00`));
+const articleBody = note.body.flatMap((section) => [section.heading, ...section.paragraphs]).filter(Boolean).join("\n\n");
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${pageUrl}#article`,
+  headline: note.title,
+  description: note.description,
+  image: imageUrl,
+  datePublished: note.publishedAt,
+  dateModified: note.updatedAt,
+  inLanguage: "tr-TR",
+  articleSection: note.category,
+  keywords: note.tags.join(", "),
+  articleBody,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl
+  },
+  author: {
+    "@type": "Organization",
+    name: note.author,
+    url: site.domain
+  },
+  publisher: {
+    "@id": `${site.domain}/#organization`
+  }
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: site.name,
+      item: site.domain
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Hocalarımızdan Notlar",
+      item: new URL(notesIndexPath, site.domain).toString()
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: note.title,
+      item: pageUrl
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${note.title} | Akyarlar Windsurf`}
+  description={note.description}
+  path={path}
+  keywords={note.keywords}
+  includeAlternates={false}
+  schemaType="content"
+  ogType="article"
+  image={imageUrl}
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <article class="note-detail">
+    <header class="note-hero">
+      <div class="container note-hero-grid">
+        <div>
+          <a class="note-back-link" href={notesIndexPath}>Hocalarımızdan Notlar</a>
+          <p class="eyebrow">{note.category}</p>
+          <h1>{note.title}</h1>
+          <p class="lead">{note.description}</p>
+          <div class="note-byline">
+            <span>{note.author}</span>
+            <time datetime={note.publishedAt}>Yayınlanma: {formatDate(note.publishedAt)}</time>
+            <time datetime={note.updatedAt}>Güncelleme: {formatDate(note.updatedAt)}</time>
+          </div>
+        </div>
+        <OptimizedImage
+          class="note-hero-media"
+          src={note.coverImage}
+          webp={note.coverImageWebp}
+          avif={note.coverImageAvif}
+          alt={note.imageAlt}
+          width={1000}
+          height={664}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </header>
+
+    <section class="section alt">
+      <div class="container note-layout">
+        <div class="note-content">
+          {note.body.map((section) => (
+            <section>
+              {section.heading && <h2>{section.heading}</h2>}
+              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </section>
+          ))}
+        </div>
+
+        <aside class="note-sidebar" aria-label="İlgili bağlantılar">
+          <div>
+            <strong>Bu notla ilgili</strong>
+            {note.relatedLinks.map((link) => (
+              <a href={link.href}>
+                <span>{link.label}</span>
+                <small>{link.text}</small>
+              </a>
+            ))}
+          </div>
+          <div>
+            <strong>Etiketler</strong>
+            <ul>
+              {note.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section note-cta-section">
+      <div class="container note-cta">
+        <p class="eyebrow">Ders planı</p>
+        <h2>Rüzgarı ve ders saatini birlikte netleştirelim</h2>
+        <p>
+          Akyarlar'da her gün aynı hissettirmez. Öğrencinin yaşı, deneyimi ve o günkü rüzgar
+          koşuluna göre en doğru dersi birlikte planlarız.
+        </p>
+        <div class="actions">
+          <a class="button" href={site.whatsapp}>WhatsApp ile sor</a>
+          <a class="button ghost" href="/iletisim/">İletişim bilgileri</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
