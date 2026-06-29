@@ -1142,6 +1142,14 @@ h3 {
   color: var(--muted);
 }
 
+.note-content a {
+  color: var(--deep);
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: rgba(19, 159, 192, 0.35);
+  text-underline-offset: 3px;
+}
+
 .note-sidebar {
   position: sticky;
   top: 120px;

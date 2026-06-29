@@ -23,6 +23,13 @@ const formatDate = (date: string) =>
     year: "numeric"
   }).format(new Date(`${date}T12:00:00+03:00`));
 const articleBody = note.body.flatMap((section) => [section.heading, ...section.paragraphs]).filter(Boolean).join("\n\n");
+const paragraphParts = (paragraph: string) => {
+  const link = note.links.find((item) => paragraph.includes(item.text));
+  if (!link) return [{ text: paragraph }];
+
+  const [before, after = ""] = paragraph.split(link.text);
+  return [{ text: before }, { text: link.text, href: link.href }, { text: after }];
+};
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -103,7 +110,13 @@ const articleSchema = {
           {note.body.map((section) => (
             <section>
               {section.heading && <h2>{section.heading}</h2>}
-              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {section.paragraphs.map((paragraph) => (
+                <p>
+                  {paragraphParts(paragraph).map((part) =>
+                    part.href ? <a href={part.href}>{part.text}</a> : part.text
+                  )}
+                </p>
+              ))}
             </section>
           ))}
         </div>

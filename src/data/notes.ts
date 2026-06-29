@@ -5,6 +5,11 @@ export type NoteSection = {
   paragraphs: string[];
 };
 
+export type NoteInlineLink = {
+  text: string;
+  href: string;
+};
+
 export type TeacherNote = {
   title: string;
   slug: string;
@@ -24,6 +29,7 @@ export type TeacherNote = {
     label: string;
     text: string;
   }>;
+  links: NoteInlineLink[];
   body: NoteSection[];
 };
 
@@ -70,6 +76,15 @@ export const teacherNotes: TeacherNote[] = [
         label: "Ders için iletişim",
         text: "Ders saati ve rüzgar durumunu birlikte planlayalım."
       }
+    ],
+    links: [
+      { text: "çocuklarla çalıştığımız", href: "/hocalarimizdan-notlar/akyarlarda-cocuklar-ruzgar-sorfune-nasil-basliyor/" },
+      { text: "Akyarlar'ın güvenli koy yapısı", href: "/akyarlar/" },
+      { text: "kum zeminli eğitim alanı", href: "/akyarlar-koyu-rehberi/" },
+      { text: "ilk dersin yaklaşık 10-15 dakikasını denge dersine", href: "/ruzgar-sorfu-dersi/" },
+      { text: "rüzgar bilgisine", href: "/bodrum-akyarlar-ruzgar-durumu/" },
+      { text: "tekne destekli derslerde", href: "/kiralama/" },
+      { text: "Bodrum rüzgar sörfü dersi", href: "/ruzgar-sorfu-dersi/" }
     ],
     body: [
       {
@@ -153,6 +168,16 @@ export const teacherNotes: TeacherNote[] = [
         label: "Uygun yaş ve saat",
         text: "Çocuğunuz için doğru günü birlikte seçelim."
       }
+    ],
+    links: [
+      { text: "çocuklarla çalışmak", href: "/bodrum-ruzgar-sorfu-okulu/" },
+      { text: "rüzgar koşulları", href: "/bodrum-akyarlar-ruzgar-durumu/" },
+      { text: "oyunlaştırılmış anlatım", href: "/hocalarimizdan-notlar/ilk-ruzgar-sorfu-dersinde-ne-anlatiyoruz/" },
+      { text: "Akyarlar'da çocukların rahatlıkla kaldırabileceği", href: "/bodrum-ruzgar-sorfu-okulu/" },
+      { text: "bel hizasına gelen, tamamen kum zeminli", href: "/akyarlar-koyu-rehberi/" },
+      { text: "tekne destekli çalışmalara", href: "/kiralama/" },
+      { text: "Akyarlar yalnızca rüzgar sörfü için değil", href: "/akyarlar/" },
+      { text: "ders sonrası sahilde dinlenebilir", href: "/akyarlar-koyu-rehberi/" }
     ],
     body: [
       {
@@ -252,6 +277,17 @@ export const teacherNotes: TeacherNote[] = [
         label: "Su sporları",
         text: "Akyarlar'daki deniz aktivitelerini keşfedin."
       }
+    ],
+    links: [
+      { text: "sabah paddle", href: "/bodrum-paddle/" },
+      { text: "öğleden sonra windsurf", href: "/ruzgar-sorfu-dersi/" },
+      { text: "rüzgar tahminine", href: "/bodrum-akyarlar-ruzgar-durumu/" },
+      { text: "SUP ve paddle board", href: "/bodrum-paddle/" },
+      { text: "bel hizasına gelen kum zeminli güvenli alanda", href: "/akyarlar-koyu-rehberi/" },
+      { text: "tekne destekli dersler", href: "/kiralama/" },
+      { text: "Çocuklu bir aile için", href: "/hocalarimizdan-notlar/akyarlarda-cocuklar-ruzgar-sorfune-nasil-basliyor/" },
+      { text: "Bodrum windsurf zamanı", href: "/bodrum-akyarlar-ruzgar-durumu/" },
+      { text: "Bodrum su sporları", href: "/bodrum-su-sporlari/" }
     ],
     body: [
       {
